@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+<body>
+  <div class="loading" id="loading"><div class="spinner"></div></div>
+
+  <div class="container">
+    <div class="nav-links">
+      <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> GO Back</a>
+      <a href="check.html" class="nav-link"><i class="fas fa-check-circle"></i> Check Status</a>
+    </div>
+
+    <h2>Student Registration Form</h2>
+
+    <form id="form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="Enter your full name" required />
+      </div>
+      <div class="form-group">
+        <label for="father">Father's Name</label>
+        <input id="father" type="text" placeholder="Enter your father's name" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="text" placeholder="Enter your phone number" required />
+        <span id="phone-error" class="error-message"></span>
+      </div>
+      <div class="form-group">
+        <label for="cnic">CNIC</label>
+        <input id="cnic" type="text" placeholder="Enter your CNIC" required />
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="gender" value="Male" required /> Male</label>
+          <label class="radio-option"><input type="radio" name="gender" value="Female"/> Female</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="course">Course</label>
+        <select id="course" required>
+          <option value="">-- Select Course --</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+          <option value="Data Science">Data Science</option>
+        </select>
+      </div>
+      <div class="form-group" id="course-details" style="display:none"></div>
+      <div class="form-group">
+        <label for="qualification">Last Qualification</label>
+        <select id="qualification" required>
+          <option value="">-- Select Qualification --</option>
+          <option value="High School">High School</option>
+          <option value="Bachelor's Degree">Bachelor's Degree</option>
+          <option value="Master's Degree">Master's Degree</option>
+          <option value="PhD">PhD</option>
+          <option value="Other">Othe</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="campus">Campus</label>
+        <select id="campus" required>
+          <option value="">-- Select Campus --</option>
+       
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="branch">Jamia</label>
+        <select id="branch" required>
+          <option value="">-- Select Jamia --</option>
+          <option value="Kanzul Eman">Kanzul Eman</option>
+          <option value="Sharah-e-faisal">Sharah-e-faisal</option>
+          <option value="Lyari Town">Lyari Town</option>
+          <option value="Korangi">Korangi</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" placeholder="Enter your complete address" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="profile-image">Profile Image</label>
+        <input type="file" id="profile-image" accept="image/*" required />
+      </div>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+    </form>
+    <p id="msg"></p>
+  </div>
+
+  <script src="idcard.js"></script>
+  <script src="student.js"></script>
+</body>
+</html>

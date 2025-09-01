@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #6c63ff;
+        --primary-dark: #564fd1;
+        --light: #f7fafc;
+        --dark: #2d3748;
+        --gray: #a0aec0;
+        --white: #ffffff;
+        --danger: #ff6584;
+        --success: #42e2b8;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+        --radius: 12px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--light);
+        color: var(--dark);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background-image: linear-gradient(
+          135deg,
+          rgba(108, 99, 255, 0.05) 0%,
+          rgba(86, 79, 209, 0.05) 100%
+        );
+      }
+
+      .back-link {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+
+      .back-link:hover {
+        color: var(--primary-dark);
+        transform: translateX(-5px);
+      }
+
+      .login-container {
+        width: 100%;
+        max-width: 480px;
+        background: var(--white);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        padding: 50px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(108, 99, 255, 0.1);
+      }
+
+      .login-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        font-size: 32px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      h2 {
+        color: var(--dark);
+        margin-bottom: 10px;
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .subtitle {
+        color: var(--gray);
+        margin-bottom: 35px;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+        text-align: left;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 500;
+        color: var(--dark);
+        font-size: 15px;
+      }
+
+      .input-wrapper {
+        position: relative;
+      }
+
+      input {
+        width: 100%;
+        padding: 15px 15px 15px 50px;
+        border: 1px solid var(--gray);
+        border-radius: var(--radius);
+        font-family: inherit;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background-color: rgba(245, 245, 245, 0.5);
+      }
+
+      input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+        background-color: var(--white);
+      }
+
+      .input-icon {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gray);
+        font-size: 18px;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: var(--white);
+        border: none;
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .login-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(108, 99, 255, 0.3);
+      }
+
+      .login-btn:active {
+        transform: translateY(0);
+      }
+
+      .error-message {
+        color: var(--danger);
+        margin-top: 20px;
+        padding: 12px;
+        background-color: rgba(255, 101, 132, 0.1);
+        border-radius: var(--radius);
+        font-size: 15px;
+        display: none;
+      }
+
+      .forgot-password {
+        display: block;
+        margin-top: 25px;
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .forgot-password:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .loading-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(108, 99, 255, 0.1);
+        border-radius: 50%;
+        border-top-color: var(--primary);
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+
+      @media (max-width: 600px) {
+        .login-container {
+          padding: 40px 30px;
+          max-width: 90%;
+        }
+
+        .back-link {
+          top: 20px;
+          left: 20px;
+        }
+
+        .logo {
+          width: 70px;
+          height: 70px;
+          font-size: 28px;
+        }
+
+        h2 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="login-container">
+      <div class="progress-bar" id="progressBar"></div>
+
+      <div class="logo">
+        <i class="fas fa-user-shield"></i>
+      </div>
+      <h2>Admin Portal</h2>
+      <p class="subtitle">
+        Enter your credentials to access the teacher dashboard
+      </p>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <div class="input-wrapper">
+          <i class="fas fa-envelope input-icon"></i>
+          <input
+            type="email"
+            id="email"
+            placeholder="admin@gmail.com"
+            autocomplete="username"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <i class="fas fa-lock input-icon"></i>
+          <input
+            type="password"
+            id="password"
+            placeholder="123456"
+            autocomplete="current-password"
+          />
+        </div>
+      </div>
+
+      <button class="login-btn" onclick="login()" id="loginBtn">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+
+      <a href="#" class="forgot-password">Forgot your password?</a>
+      <p id="errorMsg" class="error-message"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      const supabaseUrl = "https://uryazsueiysgjjchkbwl.supabase.co";
+      const supabaseKey = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVyeWF6c3VlaXlzZ2pqY2hrYndsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUwMDE0MTEsImV4cCI6MjA3MDU3NzQxMX0.2WrDpY_ZDvBbtRSjmic5n1jkZk3ZSU6x5xqce6kY-8A`;
+      const client = supabase.createClient(supabaseUrl, supabaseKey);
+
+        // async function checkSession() {
+        //   const {data: { session },} = await client.auth.getSession();
+        //   if (!session) {
+        //     window.location.href = "login.html";
+        //   } else {
+        //     window.location.href = "dashboard.html";
+        //     console.log(session.user.id);
+            
+        //   }
+        // }
+
+      async function login() {
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const errorMsg = document.getElementById("errorMsg");
+        const loadingOverlay = document.getElementById("loadingOverlay");
+        const progressBar = document.getElementById("progressBar");
+        const loginBtn = document.getElementById("loginBtn");
+
+        errorMsg.style.display = "none";
+        errorMsg.textContent = "";
+
+        if (!email || !password) {
+          errorMsg.textContent = error.message;
+          errorMsg.style.display = "block";
+          return;
+        }
+
+        loadingOverlay.classList.add("active");
+        loginBtn.disabled = true;
+
+        let progress = 0;
+        const progressInterval = setInterval(() => {
+          progress += 5;
+          progressBar.style.width = `${progress}%`;
+          if (progress >= 90) clearInterval(progressInterval);
+        }, 100);
+
+        try {
+          const { data, error } = await client.auth.signInWithPassword({
+            email: email,
+            password: password,
+          });
+
+          progressBar.style.width = "100%";
+
+          if (error) {
+            throw error;
+          }
+
+          setTimeout(() => {
+            window.location.href = "dashboard.html";
+          }, 500);
+        } catch (error) {
+          errorMsg.textContent = error.message;
+          errorMsg.style.display = "block";
+
+          progressBar.style.width = "0%";
+
+          loginBtn.style.animation = "shake 0.5s";
+          setTimeout(() => {
+            loginBtn.style.animation = "";
+          }, 500);
+        } finally {
+          setTimeout(() => {
+            loadingOverlay.classList.remove("active");
+            loginBtn.disabled = false;
+            progressBar.style.width = "0%";
+          }, 500);
+        }
+      }
+
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   checkSession();
+      // });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Check Application Status</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Check Your Application Status</h2>
+    <div class="form-group">
+      <label for="cnic"><i class="fas fa-id-card"></i> CNIC</label>
+      <input type="text" id="cnic" placeholder="Enter your CNIC">
+    </div>
+    <div class="button-group">
+      <button onclick="checkRecord()" class="button button-primary">
+        <i class="fas fa-search"></i> Check Status
+      </button>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <div id="result" class="record-box"></div>
+    <div id="error" class="error"></div>
+  </div>
+
+  <script src="idcard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    let rollNumberCounter = localStorage.getItem('rollNumberCounter') || 1000;
+   const supabaseUrl = 'https://xzypzkjqjcabioedvmzr.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6eXB6a2pxamNhYmlvZWR2bXpyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMxOTYzOTcsImV4cCI6MjA2ODc3MjM5N30.5Ic571hDQ8iYDfnKg9WCxLTX7VUoLwXxQ967PrRYYW4';
+    const client = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // async function checkRecord() {
+    //   const cnic = document.getElementById('cnic').value.trim();
+    //   const resultBox = document.getElementById('result');
+    //   const errorBox = document.getElementById('error');
+    //   const loading = document.getElementById('loading');
+
+    //   resultBox.style.display = 'none';
+    //   errorBox.style.display = 'none';
+    //   errorBox.textContent = '';
+    //   loading.classList.add("active");
+
+    //   if (!cnic) {
+    //     errorBox.textContent = 'Please enter your CNIC.';
+    //     errorBox.style.display = 'block';
+    //     loading.classList.remove("active");
+    //     return;
+    //   }
+
+    //   try {
+    //     const { data, error } = await client.from('students').select('*').eq('cnic', cnic);
+    //     loading.classList.remove("active");
+
+    //     if (error || !data || data.length === 0) throw new Error('No record found with this CNIC.');
+
+    //     let htmlContent = "";
+    //     data.forEach((record, index) => {
+    //       const statusClass = `status-${record.status.toLowerCase()}`;
+    //       const statusText = record.status.charAt(0).toUpperCase() + record.status.slice(1).toLowerCase();
+    //       const profileImageUrl = record.profile_image || 'https://via.placeholder.com/100?text=No+Image';
+
+    //       let statusMessage = '';
+    //       if (record.status.toLowerCase() === 'pending') 
+    //         statusMessage = '<p style="color: var(--warning);"><i class="fas fa-clock"></i> Your application is under review.</p>';
+    //       else if (record.status.toLowerCase() === 'active') 
+    //         statusMessage = '<p style="color: var(--success);"><i class="fas fa-check-circle"></i> Approved.</p>';
+    //       else if (record.status.toLowerCase() === 'rejected') 
+    //         statusMessage = '<p style="color: var(--danger);"><i class="fas fa-times-circle"></i> Rejected.</p>';
+
+    //       htmlContent += `
+    //         <div id="student-card-${index}">
+    //           <h3 style="text-align:center;">Application ${data.length > 1 ? `(${index + 1})` : ''}</h3>
+    //           <img src="${profileImageUrl}" alt="Profile Photo" class="student-photo" />
+    //           <div class="record-item"><span class="record-label">Full Name:</span><span>${record.name || 'Not provided'}</span></div>
+    //           <div class="record-item"><span class="record-label">Father's Name:</span><span>${record.father_name || 'Not provided'}</span></div>
+    //           <div class="record-item"><span class="record-label">Branch:</span><span>${record.branch || 'Not provided'}</span></div>
+    //           <div class="record-item"><span class="record-label">Phone:</span><span>${record.phone || 'Not provided'}</span></div>
+    //           <div class="record-item"><span class="record-label">Course:</span><span>${record.course || 'Not provided'}</span></div>
+    //           <div class="record-item"><span class="record-label">Applied On:</span><span>${new Date(record.created_at).toLocaleString()}</span></div>
+    //           <div class="record-item"><span class="record-label">Status:</span>
+    //             <span>${statusText}<span class="status-badge ${statusClass}">${record.status}</span></span>
+    //           </div>
+    //           ${statusMessage}
+    //           ${record.status.toLowerCase() === 'active' ? `
+    //             <button class="button button-primary" 
+    //                     onclick="handlePDFClick(this)"
+    //                     data-name="${record.name || ''}"
+    //                     data-father="${record.father_name || ''}"
+    //                     data-cnic="${record.cnic || ''}"
+    //                     data-course="${record.course || ''}"
+    //                     data-branch="${record.branch || ''}"
+    //                     data-created="${record.created_at || ''}"
+    //                     data-course-detail="${record.course_detail || ''}"
+    //                     data-status="${record.status || ''}"
+    //                     data-image="${profileImageUrl}">
+    //               <i class="fas fa-id-card"></i> Generate ID Card
+    //             </button>` : ''}
+    //         </div>
+    //       `;
+    //     });
+
+    //     resultBox.innerHTML = htmlContent;
+    //     resultBox.style.display = 'block';
+
+    //   } catch (error) {
+    //     errorBox.textContent = error.message;
+    //     errorBox.style.display = 'block';
+    //     resultBox.style.display = 'none';
+    //     loading.classList.remove("active");
+    //   }
+    // }
+
+
+async function checkRecord() {
+  const cnic = document.getElementById('cnic').value.trim();
+  const resultBox = document.getElementById('result');
+  const errorBox = document.getElementById('error');
+  const loading = document.getElementById('loading');
+
+  resultBox.style.display = 'none';
+  errorBox.style.display = 'none';
+  errorBox.textContent = '';
+  loading.classList.add("active");
+
+  if (!cnic) {
+    errorBox.textContent = 'Please enter your CNIC.';
+    errorBox.style.display = 'block';
+    loading.classList.remove("active");
+    return;
+  }
+
+  try {
+    const { data, error } = await client.from('students').select('*').eq('cnic', cnic);
+    loading.classList.remove("active");
+
+    if (error || !data || data.length === 0) throw new Error('No record found with this CNIC.');
+
+    let htmlContent = "";
+    data.forEach((record, index) => {
+      const statusClass = `status-${record.status.toLowerCase()}`;
+      const statusText = record.status.charAt(0).toUpperCase() + record.status.slice(1).toLowerCase();
+      const profileImageUrl = record.profile_image || 'https://via.placeholder.com/100?text=No+Image';
+
+      let statusMessage = '';
+      if (record.status.toLowerCase() === 'pending') 
+        statusMessage = '<p style="color: var(--warning);"><i class="fas fa-clock"></i> Your application is under review.</p>';
+      else if (record.status.toLowerCase() === 'active') 
+        statusMessage = '<p style="color: var(--success);"><i class="fas fa-check-circle"></i> Approved.</p>';
+      else if (record.status.toLowerCase() === 'rejected') 
+        statusMessage = '<p style="color: var(--danger);"><i class="fas fa-times-circle"></i> Rejected.</p>';
+
+      htmlContent += `
+        <div id="student-card-${index}">
+          <h3 style="text-align:center;">Application ${data.length > 1 ? `(${index + 1})` : ''}</h3>
+          <img src="${profileImageUrl}" alt="Profile Photo" class="student-photo" />
+          <div class="record-item"><span class="record-label">Full Name:</span><span>${record.name || 'Not provided'}</span></div>
+          <div class="record-item"><span class="record-label">Father's Name:</span><span>${record.father_name || 'Not provided'}</span></div>
+          <div class="record-item"><span class="record-label">Branch:</span><span>${record.branch || 'Not provided'}</span></div>
+          <div class="record-item"><span class="record-label">Phone:</span><span>${record.phone || 'Not provided'}</span></div>
+          <div class="record-item"><span class="record-label">Course:</span><span>${record.course || 'Not provided'}</span></div>
+          <div class="record-item"><span class="record-label">Applied On:</span><span>${new Date(record.created_at).toLocaleString()}</span></div>
+          <div class="record-item"><span class="record-label">Status:</span>
+            <span>${statusText}<span class="status-badge ${statusClass}">${record.status}</span></span>
+          </div>
+          ${statusMessage}
+
+          <!-- ID Card generation button will always be displayed now -->
+          <button class="button button-primary" 
+                  onclick="handlePDFClick(this)"
+                  data-name="${record.name || ''}"
+                  data-father="${record.father_name || ''}"
+                  data-cnic="${record.cnic || ''}"
+                  data-course="${record.course || ''}"
+                  data-branch="${record.branch || ''}"
+                  data-created="${record.created_at || ''}"
+                  data-course-detail="${record.course_detail || ''}"
+                  data-status="${record.status || ''}"
+                  data-image="${profileImageUrl}">
+            <i class="fas fa-id-card"></i> Generate ID Card
+          </button>
+        </div>
+      `;
+    });
+
+    resultBox.innerHTML = htmlContent;
+    resultBox.style.display = 'block';
+
+  } catch (error) {
+    errorBox.textContent = error.message;
+    errorBox.style.display = 'block';
+    resultBox.style.display = 'none';
+    loading.classList.remove("active");
+  }
+}
+
+
+
+
+
+
+    function handlePDFClick(button) {
+      rollNumberCounter++;
+      localStorage.setItem('rollNumberCounter', rollNumberCounter);
+
+      const data = {
+        name: button.dataset.name || '',
+        fatherName: button.dataset.father || '',
+        cnic: button.dataset.cnic || '',
+        course: button.dataset.course || '',
+        branch: button.dataset.branch || '',
+        created_at: button.dataset.created || '',
+        course_detail: button.dataset.courseDetail || '',
+        status: button.dataset.status || '',
+        profileImageUrl: button.dataset.image || '',
+        rollNumber: `SEP-${rollNumberCounter}`
+      };
+
+      generatePDF(data);
+    }
+  </script>
+</body>
+</html>
