@@ -344,14 +344,16 @@ header>div button {
     color: white;
     background-color: #009688;
 }
-#inputOuter button:hover{
-    background-color: #056456;
-}
-#inputOuter1 button:hover{
+
+#inputOuter button:hover {
     background-color: #056456;
 }
 
-#inputOuter1 button i ,
+#inputOuter1 button:hover {
+    background-color: #056456;
+}
+
+#inputOuter1 button i,
 #inputOuter button i {
     font-size: 1.1vw;
     color: white !important;
@@ -382,14 +384,14 @@ header>div button {
 
 .search-input3 i {
     position: absolute !important;
-    right:0vw !important;
+    right: 0vw !important;
     top: 0.8vw;
     font-size: 1.3vw;
     /* left: 1px !important; */
     z-index: 9909090;
 }
 
-.search-input3{
+.search-input3 {
     /* border: 1px solid rebeccapurple !important; */
     width: 100%;
     position: relative;
@@ -1452,7 +1454,7 @@ aside h1 {
 
 .aside2 {
 
-    height: 65vh;
+    height: 35vw;
     width: 100%;
     background-color: #FFFFFF;
     border-bottom: 1px solid rgba(128, 128, 128, 0.266);
@@ -1539,21 +1541,24 @@ aside h1 {
 
 .newsh2 {
     margin-top: 2vw;
+
     color: rgb(0, 0, 0);
     font-family: Oswald, sans-serif;
     font-weight: 700;
     font-size: 2vw;
+    /* padding: 2vw 0vw; */
     text-align: center;
     text-transform: uppercase;
+    /* border: 1px solid black; */
 }
 
 .news {
-    margin-top: 2vw;
-    height: 55vw;
+    margin-top: 3vw;
+    height: 60vw;
     width: 100%;
     display: flex;
     justify-content: center;
-    /* border: 1px solid black; */
+    gap: 3vw;
 }
 
 .news>div {
@@ -1569,12 +1574,15 @@ aside h1 {
 
 .newsinner1>div {
     position: relative;
+    width: 30vw;
+    /* border: 1px solid red; */
 }
 
 
 
 .newsinner1 img {
-    object-fit: cover;
+    width: 100%;
+    /* object-fit: cover; */
 }
 
 .newsinner1 h2 {
