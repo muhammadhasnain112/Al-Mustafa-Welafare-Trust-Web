@@ -22,6 +22,7 @@ input.addEventListener('click', () => {
     inputOuter.style.transform = `translateY(0)`
 })
 let flag = false
+
 search2.addEventListener('click', () => {
     if (flag) {
         // inputOuter.style.top = `${window.scrollY + 55}px`/
@@ -165,100 +166,45 @@ about2.addEventListener('mouseout', () => {
     infobar4.style.opacity = `0`
 
 })
-let count = 0
+// console.log(location);
+if (location.pathname == '/') {
+    let count = 0
+    setInterval(() => {
+        count++
+        if (count > 3) {
+            count = 0
+        }
+        img.src = `img/${count}.jpg`
+    }, 2000)
 
-setInterval(() => {
-    count++
-    if (count > 3) {
-        count = 0
+    let index = 0;
+    const cards = document.querySelector(".cards");
+    const totalCards = 8;
+    const visibleCards = 3;
+    function showCards() {
+        const cardWidth = document.querySelector(".card").offsetWidth + 20;
+        const offset = -(index * cardWidth * visibleCards);
+        cards.style.transform = `translateX(${offset}px)`;
+        // move index
+        index++;
+        if (index * visibleCards >= totalCards) {
+            index = 0;
+        }
     }
-    img.src = `img/${count}.jpg`
-}, 2000)
 
+    setInterval(showCards, 5000);
 
-
-
-
-const cards = document.querySelector(".cards");
-const totalCards = 8;
-const visibleCards = 3;
-let index = 0;
-
-function showCards() {
-    const cardWidth = document.querySelector(".card").offsetWidth + 20; // width + gap
-    const offset = -(index * cardWidth * visibleCards);
-    cards.style.transform = `translateX(${offset}px)`;
-
-    // move index
-    index++;
-    if (index * visibleCards >= totalCards) {
-        index = 0;
-    }
 }
 
-setInterval(showCards, 5000);
 
 
 
-$(document).ready(function () {
-    $('.stats-wrapper').super({
-        autoplay: true,
-        indicator: false,
-        // slidesToScroll: 1,
-        slidesToShow: 5,
-    });
-});
-
-// const wrapper = document.getElementById("statsWrapper");
-// const stats = wrapper.children;
-// const leftBtn = document.querySelector(".left");
-// const rightBtn = document.querySelector(".right");
-
-// let currentIndex = 2; // middle item index (0-based)
-// let isAnimating = false;
-
-// function updateActive() {
-//     [...stats].forEach(stat => stat.classList.remove("active"));
-//     stats[currentIndex].classList.add("active");
-// }
-
-// function slide(direction) {
-//     if (isAnimating) return;
-//     isAnimating = true;
-
-//     if (direction === "right") {
-//         wrapper.style.transform = "translateX(-200px)";
-//         setTimeout(() => {
-//             wrapper.appendChild(wrapper.firstElementChild);
-//             wrapper.style.transition = "none";
-//             wrapper.style.transform = "translateX(0)";
-//             setTimeout(() => {
-//                 wrapper.style.transition = "transform 0.5s ease";
-//                 isAnimating = false;
-//             });
-//         }, 500);
-//     } else if (direction === "left") {
-//         wrapper.insertBefore(wrapper.lastElementChild, wrapper.firstElementChild);
-//         wrapper.style.transition = "none";
-//         wrapper.style.transform = "translateX(-200px)";
-//         setTimeout(() => {
-//             wrapper.style.transition = "transform 0.5s ease";
-//             wrapper.style.transform = "translateX(0)";
-//             setTimeout(() => {
-//                 isAnimating = false;
-//             }, 500);
-//         });
-//     }
-//     updateActive();
-// }
-
-// rightBtn.addEventListener('click', abc)
 
 
-// function abc() {
 
-//     slide("right")
-// }
-// setInterval(abc, 2000)
-// leftBtn.addEventListener("click", () => slide("left"));
-// updateActive();
+
+
+
+
+
+
