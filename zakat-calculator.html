@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Mustafa Welfare</title>
+    <title>Zakat Calculator</title>
     <link rel="shortcut icon" href="img/al-mustafa-logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" -->
-    <!-- integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Style+Script&display=swap"
         rel="stylesheet">
@@ -26,12 +25,158 @@
         href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Style+Script&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/superslider/dist/css/main.min.css" />
+    <style>
+        .card {
+            width: 15vw !important;
+
+        }
+    </style>
 </head>
 
 <body>
+    <div id="donate-bar2">
+        <h3>Checkout</h3>
+        <h4>Help us further</h4>
+        <div style="margin-top: 2vw;">
+            <div>
+                <div>
+                    <h6>Plant an Olive Tree in <br>Palestine</h6>
+                    <h3><input type="checkbox" id="check-box1"> Olive Tree</h3>
+                </div>
+                <div>
+                    <h3 style="color: black;">Rs: 10.00</h3>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div>
+                    <h6>Eye Project</h6>
+                    <h3><input type="checkbox" id="check-box2">Qur'an Reading Pen</h3>
+                </div>
+                <div>
+                    <h3 style="color: black;">Rs: 25.00</h3>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div>
+                    <h6>Administration</h6>
+                    <h3><input type="checkbox" id="check-box3"> Administration Fee</h3>
+                </div>
+                <div>
+                    <h3 style="color: black;">Rs: 1.00</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="total">
+            <div>
+                <h3>Total</h3>
+                <h3>Rs:0.00</h3>
+            </div>
+            <div><button onclick="window.location.href = 'add-cart.html' ">Complete Donation <i class="ri-arrow-right-s-line"></i></button></div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <div class="donate-bar" id="donate-bar">
+        <div id="cancel"><i class="ri-close-fill"></i></div>
+        <h3><i class="ri-check-fill"></i> Donation Added</h3>
+        <h4>You are donating to <span></span></h4>
+
+
+        <div id="zakat-calc">
+            <div id="zakat-pay">
+                <div>
+                    <h3>Zakat</h3>
+                    <p>Single Payment Zakat</p>
+                    <div>
+                        <div style="border-right: none !important;" id="minus"><i class="ri-subtract-line"></i></div>
+                        <div style="border-right: none !important;" id="counter">1</div>
+                        <div id="plus"><i class="ri-add-line"></i></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="zakatvalue"></h3>
+                    <p><a href="#" onclick="remove()">Remove</a></p>
+                </div>
+            </div>
+            <div id="olive-tree">
+                <div>
+                    <h3>OLIVE TREE</h3>
+                    <p>Single Payment Zakat</p>
+                    <div>
+                        <div style="border-right: none !important;" id="minus2"><i class="ri-subtract-line"></i></div>
+                        <div style="border-right: none !important;" id="counter2">1</div>
+                        <div id="plus2"><i class="ri-add-line"></i></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="zakatvalue2">Rs:10.00</h3>
+                    <p><a href="#" onclick="remove1()">Remove</a></p>
+                </div>
+            </div>
+            <div id="Quran-reading">
+                <div>
+                    <h3>Qur'an Reading Pen</h3>
+                    <p>Single Payment Zakat</p>
+                    <div>
+                        <div style="border-right: none !important;" id="minus3"><i class="ri-subtract-line"></i></div>
+                        <div style="border-right: none !important;" id="counter3">1</div>
+                        <div id="plus3"><i class="ri-add-line"></i></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="zakatvalue3">Rs:25.00</h3>
+                    <p><a href="#" onclick="remove2()">Remove</a></p>
+                </div>
+            </div>
+            <div id="Administration" style="border: none;">
+                <div>
+                    <h3>Administration Fee</h3>
+                    <p>Single Payment Zakat</p>
+                    <div>
+                        <div style="border-right: none !important;" id="minus4"><i class="ri-subtract-line"></i></div>
+                        <div style="border-right: none !important;" id="counter4">1</div>
+                        <div id="plus4"><i class="ri-add-line"></i></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="zakatvalue4">Rs:1.00</h3>
+                    <p><a href="#" onclick="remove3()">Remove</a></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="all-calc">
+            <div>
+                <h3>Donations</h3>
+                <h3 id="all-zakat-show"></h3>
+            </div>
+            <div>
+                <button style="background-color: rgb(199, 213, 24);" id="add-another">ADD ANOTHER <i
+                        class="ri-arrow-right-s-line"></i></button>
+                <button style="background-color:  rgb(0, 155, 131) ; color: #fff;" id="checkout">CHECKOUT <i
+                        class="ri-arrow-right-s-line"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <header>
-
-
         <nav>
             <div class="navinner1">
                 <img src="img/al-mustafa-logo.svg" alt="">
@@ -78,7 +223,7 @@
                             <p class="">GBP <i class="ri-arrow-down-s-line"></i>&nbsp; </p>
                             <p class="">EN <i class="ri-arrow-down-s-line"></i>&nbsp;</p>
                             <small onclick="window.location.href ='contact.html' " class="contact">CONTACT US</small>
-                            <small class="contact" onclick=" window.location.href = 'zakat-calculator.html' ">ZAKAT CALCULATOR</small>
+                            <small class="contact">ZAKAT CALCULATOR</small>
                         </div>
                     </div>
                 </div>
@@ -93,16 +238,319 @@
             <div class="navinner3">
                 <p>Call us for information</p>
                 <strong style="margin-top: 0.3vw;"><a href="tel:+92208 569 6444">0208 569 6444</a></strong>
-                <button style="margin-top: 1vw;" onclick="window.location.href = 'donate.html' ">DONATE NOW &nbsp;<i
+                <button style="margin-top: 1vw;" onclick="window.location.href='donate.html' ">DONATE NOW &nbsp;<i
                         class="ri-arrow-right-wide-line"></i></button>
             </div>
         </nav>
 
-        <div>
-            <img src="" alt="" id="img">
-            <button class="donate">DONATE NOW <i class="ri-arrow-right-wide-line"></i></button>
-        </div>
+        <h6 class="image-zakat">
+            <div>
+                <p>HOME &nbsp; &nbsp; > &nbsp; &nbsp; ZAKAT &nbsp; &nbsp; CALCULATOR</p>
+                <h3>ZAKAT CALCULATOR</h3>
+            </div>
+        </h6>
+
     </header>
+
+    <div class="zakat-imagebar">
+        <div class="zakat-text">
+            <h3>Calculate your Zakat quickly & easily</h3>
+            <p>The amount of <a href="#">Zakat</a> you pay each year will vary depending on your financial situation and
+                the changing
+                value of the Nisab. It is incredibly important your Zakat calculations for 2025 are accurate and up to
+                date.</p>
+            <p>Our Zakat Calculator makes calculating your Zakat simple and easy! We have simplified the Zakat
+                calculation process by categorizing Zakat assets and deductible liabilities. All you need to do is to
+                enter relevant information about your situation below.</p>
+            <p>Once you’ve done that, our Zakat Calculator does all the hard work. We’ll show you how much Zakat you
+                need to pay in 2025, and you can easily donate Zakat right away.</p>
+            <h5></h5>
+            <p class="view">View our demo video if you need more help with using our Zakat Calculator & scroll below to
+                find out more
+                about our 100% Zakat Policy Projects.</p>
+        </div>
+        <div class="zakat-img-div"><img src="img/zaka2.jpg" alt="">
+            <div><button><a href="https://youtu.be/zWFVRdtL1-Y?si=l5FnJVKjoU46xiS1"><i class="ri-play-fill"></i> &nbsp;
+                        Watch The Video</a></button></div>
+        </div>
+    </div>
+
+    <h2 class="h21">
+        *Nisab values for Zakat are correct as of January 2025 (<span> www.gold.co.uk</span> )
+    </h2>
+
+    <div class="zakat-already">
+        <div>
+            <h2>HAVE YOU ALREADY CALCULATED YOUR ZAKAT</h2>
+            <div> <span>Rs:</span><input type="number" placeholder="0:00" id="already-calc-zakat-inp"><button id="already-calc-zakat-btn">Donate <i
+                        class="ri-arrow-right-s-line"></i></button> </div>
+        </div>
+    </div>
+
+    <div class="calculator">
+        <div>
+            <div class="calc-inner1">
+                <h3>NISAB VALUES</h3>
+                <div>
+                    <div>
+                        <h6>Silver nisab </h6>
+                        <p>Rs: 349.15 <span> (612.36g)</span></p>
+                    </div>
+                    <div>
+                        <h6>Gold nisab </h6>
+                        <p>Rs: 4,527.96 <span> (87.48g)</span></p>
+                    </div>
+                    <div style="border: none !important;">
+                        <h6>Guidance on weight: </h6>
+                        <p>Nisab in tola = 7.5 tola</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="calc-inner2">
+                <div>
+                    <h3>BASE NISAB ON VALUE OF</h3>
+                    <select name="" id="">
+                        <option value="Gold">Gold</option>
+                        <option value="Silver">Silver</option>
+                    </select>
+                    <h3>Cash</h3>
+                    <div>
+                        <div class="calc-text">
+                            <p>In hand and in bank accounts </p>
+                            <p>Rs:</p>
+                        </div>
+                        <div class="calc-input"><input type="number" placeholder="0.00" id="calc-input1"></div>
+                    </div>
+                    <div>
+                        <div class="calc-text">
+                            <p>Savings for the future </p>
+                            <p>Rs:</p>
+                        </div>
+                        <div class="calc-input"><input type="number" placeholder="0.00" id="calc-input2"></div>
+                    </div>
+                    <div>
+                        <div class="calc-text">
+                            <p>Money you have loaned </p>
+                            <p>Rs:</p>
+                        </div>
+                        <div class="calc-input"><input type="number" placeholder="0.00" id="calc-input3"></div>
+                    </div>
+                    <div>
+                        <div class="calc-text">
+                            <p>Business investments</p>
+                            <p>Rs:</p>
+                        </div>
+                        <div class="calc-input"><input type="number" placeholder="0.00" id="calc-input4"></div>
+                    </div>
+                    <h3>Business Assets</h3>
+                    <div>
+                        <div class="calc-text">
+                            <p>Stock value</p>
+                            <p>Rs:</p>
+                        </div>
+                        <div class="calc-input"><input type="number" placeholder="0.00" id="calc-input5"></div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="calc-inner2inner">
+                    <h3>Gold & silver</h3>
+
+                    <div>
+                        <div class="calc-text">
+                            <p>Value of silver and gold you possess</p>
+                            <p>Rs:</p>
+                        </div>
+                        <div class="calc-input"><input type="number" placeholder="0.00" id="calc-input6"></div>
+                    </div>
+                    <h3>Liabilities</h3>
+                    <div>
+                        <div class="calc-text">
+                            <p>Money owed (borrowed or credit)</p>
+                            <p>Rs:</p>
+                        </div>
+                        <div class="calc-input"><input type="number" placeholder="0.00" id="calc-input7"></div>
+                    </div>
+                    <div>
+                        <div class="calc-text">
+                            <p>Employees’ salaries</p>
+                            <p>Rs:</p>
+                        </div>
+                        <div class="calc-input"><input type="number" placeholder="0.00" id="calc-input8"></div>
+                    </div>
+                    <div>
+                        <div class="calc-text">
+                            <p>Other outgoings due (tax, rent, utilities)</p>
+                            <p>Rs:</p>
+                        </div>
+                        <div class="calc-input"><input type="number" placeholder="0.00" id="calc-input9"></div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="calc-inner3">
+                <div>
+                    <h3>Your current assets are worth </h3>
+                    <h2 id="all-calc">Rs: 0.00</h2>
+                </div>
+                <div style="border: none !important;">
+                    <h3>The value of your payable Zakat is </h3>
+                    <h2 id="zakat-value">Rs:0.00</h2>
+                </div>
+            </div>
+
+            <div class="calc-inner4">
+                <div><button class="calc-btn1" id="reset">Reset</button></div>
+                <div><button class="calc-btn2" id="donate">Donate <i class="ri-arrow-right-s-line"></i></button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="calc-card">
+        <div class="cards">
+            <!-- Card 1 -->
+            <div class="card card1">
+                <img src="img/p0.jpg" alt="" class="">
+                <div class=" card-content1 red"></div>
+                <div class="card-content red">
+                    <h2>PAKISTAN FLOODS EMERGENCY</h2>
+                    <div> <button class="card-btn red">DONATE <i class="ri-arrow-right-s-line"></i></button>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card card2">
+                <img src="img/p1.jpg" alt="">
+                <div class="card-content red">
+                    <h2>PALESTINE & GAZA EMERGENCY APPEAL</h2>
+                    <div> <button class="card-btn red">DONATE <i class="ri-arrow-right-s-line"></i></button>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card card3">
+                <img src="img/p2.jpg" alt="">
+                <div class="card-content green">
+                    <h2>ZAKAT</h2>
+
+                    <div> <button class="card-btn green"> DONATE <i class="ri-arrow-right-s-line"></i></button>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card card4">
+                <img src="img/p3.jpg" alt="">
+                <div class="card-content red">
+                    <h2>LEBANON EMERGENCY APPEAL</h2>
+                    <div> <button class="card-btn red">DONATE <i class="ri-arrow-right-s-line"></i></button>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card card5">
+                <img src="img/p4.jpg" alt="">
+                <div class="card-content green">
+                    <h2>SYRIA EMERGENCY APPEAL</h2>
+                    <div>
+                        <button class="card-btn green">DONATE <i class="ri-arrow-right-s-line"></i></button>
+                        <a href="#">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="calc-imgbar">
+        <div class="chotadiv">
+            <img src="img/kid.jpg" alt="" class="imgbar-img1">
+            <h2>
+                zakat frequently
+                asked</h2>
+            <h3>QUESTIONS ? </h3>
+            <button>Learn More <i class="ri-arrow-drop-right-line"></i></button>
+        </div>
+        <div class="baradiv">
+            <h3>OUR LIFE-CHANGING ZAKAT PROJECTS</h3>
+            <p>At Al Mustafa Welfare Trust, our Zakat initiatives are genuinely making a life-saving difference. Once
+                you evaluate your Zakat amount using our Zakat calculator. You can choose from a whole host of projects,
+                and we’ll ensure 100% of your Zakat donation goes to those who need it most.</p>
+            <p>Your <a href="#">Zakat</a> can save lives and help bring entire communities out of devastating cycles of
+                poverty. Our
+                100% Zakat policy means that every single penny of your donation will reach those most in need.</p>
+            <div></div>
+            <h6>Here are some brilliant things your Zakat can achieve</h6>
+        </div>
+    </div>
+    <div class="calc-imgbar2">
+        <div class="baradiv2">
+            <h2>What is Nisab?</h2>
+            <p>Nisab is the minimum amount of wealth that a Muslim must possess in order to pay Zakat. Using the weight
+                of gold, 87.48 grams or silver, 612.36, the Nisab makes sure that everybody is dealt fairly by only
+                being applicable to those who have the ability to do so. Zakat becomes due if total assets are worth
+                more than this amount for a lunar year. The concept of Nisab is based on mercy so that no undue burden
+                is placed on those struggling to meet their needs.</p>
+        </div>
+        <div class="chotadiv2">
+            <h2>How is Zakat Calculated?</h2>
+            <p>Zakat is usually calculated as 2.5% of surplus wealth, including the surplus amount in savings accounts,
+                investments, and assets after deducting liabilities. First, add up total assets, then subtract any debts
+                and responsibilities. Now, make sure that the remaining amount meets the Nisab threshold. Zakat helps
+                Muslims fulfill their duties as well as contribute straight to the lives of unfortunate ones.</p>
+        </div>
+    </div>
+    <div class="calc-imgbar3">
+        <div class="baradiv3">
+            <h2>Who is Eligible to Pay Zakat?</h2>
+            <p>If a Muslim possesses wealth over Nisab level for one lunar year, he is eligible to pay Zakat. This
+                applies to people who are wealthy enough with savings and assets to qualify. Giving Zakat is an
+                obligation and also an honor that purifies wealth, makes the world a better place.</p>
+        </div>
+        <div class="chotadiv3">
+            <img src="img/pay-zakat.jpeg" alt="">
+        </div>
+    </div>
+
+    <div class="calc-imgbar4">
+        <div class="baradiv4">
+            <img src="img/aunty.jpg" alt="">
+        </div>
+        <div class="chotadiv4">
+            <h4>Scholar Verified</h4>
+            <h5><i>We ensure our content is reviewed and verified by qualified scholars to provide you with the most
+                    accurate information. This webpage is reviewed by Rizwana Latif Rizwana Latif is an accomplished
+                    Islamic
+                    scholar and teacher.</i></h5>
+            <p>She graduated as a qualified religious scholar from Tanzeem ul Madaris with a specialty in Fiqh (Islamic
+                jurisprudence). She also earned an LLB (hons) in Shariah and Law from the International Islamic
+                University. For over 10 years, Rizwana has taught college courses in Arabic and Islamic studies.</p>
+            <p>She is a talented public speaker, giving impactful lectures nationally and internationally. Rizwana has
+                worked with major Islamic TV channels like QTv and Islam Channel. Her programs continue to air
+                regularly, teaching mainstream Islam. She also partners with local mosques to guide and empower the
+                community, especially women.</p>
+            <p>With her diverse background, Rizwana is a knowledgeable resource on core Islamic principles and topics.
+                Her experience allows her to make Islamic teachings relatable and accessible.</p>
+        </div>
+    </div>
 
     <div id="icons">
         <div>
@@ -191,7 +639,8 @@
                     <h3 class="zakat"><i class="ri-hand-coin-fill"></i> <br> Zakat</h3>
                 </div>
                 <div>
-                    <p>Donate your Zakat today and we’ll <br> ensure 100% of your donation goes <br> to those who need
+                    <p>Donate your Zakat today and we’ll <br> ensure 100% of your donation goes <br> to those who
+                        need
                         it most!</p>
                 </div>
                 <div><button>Find Out More <i class="ri-arrow-right-s-line"></i></button></div>
@@ -211,7 +660,8 @@
             </div>
             <div class="abc">
                 <div class="zakatfactinner">
-                    <h3 class="zakat left" style="color: #EC008C!important ;"><i class="ri-hand-coin-fill"></i> </h3>
+                    <h3 class="zakat left" style="color: #EC008C!important ;"><i class="ri-hand-coin-fill"></i>
+                    </h3>
                     <h3 class="zakat" style="color: #EC008C!important ;"> Zakat Projects</h3>
 
                 </div>
@@ -265,8 +715,6 @@
         </div>
     </div>
 
-
-
     <div class="infobar3" id="infobar3">
         <div class="info3inner1">
             <div class="volunter">
@@ -274,7 +722,8 @@
                     <h2>Voluntering abroad</h2>
                 </div>
                 <div>
-                    <p>The volunteering abroad experience is a fantastic way to fully experience a new culture and to
+                    <p>The volunteering abroad experience is a fantastic way to fully experience a new culture and
+                        to
                         work
                         directly with local peopl...</p>
                 </div>
@@ -345,8 +794,6 @@
         </div>
     </div>
 
-
-
     <div class="infobar4" id="infobar4">
         <div class="info3inner1">
             <div class="volunter">
@@ -354,7 +801,8 @@
                     <h2>OUR HISTORY</h2>
                 </div>
                 <div>
-                    <p>The volunteering abroad experience is a fantastic way to fully experience a new culture and to
+                    <p>The volunteering abroad experience is a fantastic way to fully experience a new culture and
+                        to
                         work
                         directly with local peopl...</p>
                 </div>
@@ -427,37 +875,6 @@
         </div>
     </div>
 
-
-    <main>
-        <div>
-            <h4>Quick Donate</h4>
-        </div>
-        <div>
-            <select name="" id="">
-                <option value="">Single Payment</option>
-                <option value="">Monthly Payment</option>
-            </select>
-        </div>
-        <div>
-            <select name="" id="">
-                <option value="">$40.00</option>
-                <option value="">$50.00</option>
-                <option value="">$100.00</option>
-            </select>
-        </div>
-        <div>
-            <select id="">
-                <option value="">General Donation</option>
-                <option value="">Zakat</option>
-                <option value="">Sadaqah</option>
-            </select>
-        </div>
-        <div>
-            <button>DONATE NOW</button>
-        </div>
-    </main>
-
-    <!-- second navbar -->
     <div class="secondnav" id="second">
         <div class="img">
             <img src="https://www.almustafatrust.org/_ui/themes/almustafa/media/al-mustafa-logo-fixed.png" alt="">
@@ -479,7 +896,8 @@
                     style=" color: black !important;"></i></h5>
         </div>
         <div class="border">
-            <div style="padding-right: 1.2vw;"><i class="ri-search-line" style="font-size: 1vw;" id="search2"></i></div>
+            <div style="padding-right: 1.2vw;"><i class="ri-search-line" style="font-size: 1vw;" id="search2"></i>
+            </div>
             <div id="inputOuter1">
                 <div>
                     <div class="search-input3"><input type="text" placeholder="SEARCH" class=" sarchinput"> <i
@@ -520,314 +938,19 @@
             <small onclick="window.location.href ='contact.html' " class="contact">CONTACT US</small>
         </div>
         <div style="padding-right: 1.2vw;">
-            <small  onclick=" window.location.href = 'zakat-calculator.html' ">ZAKAT CALCULATOR</small>
+            <small>ZAKAT CALCULATOR</small>
         </div>
         <div>
             <button style="margin-left: 3vw;" onclick="window.location.href='donate.html' ">DONATE NOW <i
                     class="ri-arrow-right-wide-line"></i></button>
         </div>
     </div>
-    <!-- second navbar end -->
-    <section>
-        <img src="img/give-your-zakat.png" alt="" class="secimg">
-        <img src="img/zakat-policy.png" alt="" class="thirdimg">
-        <h2>A Muslim charity with a 100% Zakat Policy</h2>
-        <p>Our 100% Zakat Policy means that 100% of your Zakat will reach those who need it the most.
-            <br>With complete transparency and trust, your Zakat donation helps others, transforms lives, and
-            fulfills
-            your spiritual duty.
-            <br>Choose from the following projects to donate and make a life-changing impact!
-        </p>
 
-
-        <div class="cards-container">
-            <div class="cards">
-                <!-- Card 1 -->
-                <div class="card card1">
-                    <img src="img/p0.jpg" alt="" class="">
-                    <div class=" card-content1 red"></div>
-                    <div class="card-content red">
-                        <h2>PAKISTAN FLOODS EMERGENCY</h2>
-                        <div><button class="card-btn red">DONATE <i class="ri-arrow-right-s-line"></i></button>
-                            <a href="#">LEARN MORE</a>
-                        </div>
-                    </div>
-                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="card card2">
-                    <img src="img/p1.jpg" alt="">
-                    <div class="card-content red">
-                        <h2>PALESTINE & GAZA EMERGENCY APPEAL</h2>
-                        <div><button class="card-btn red">DONATE <i class="ri-arrow-right-s-line"></i></button>
-                            <a href="#">LEARN MORE</a>
-                        </div>
-                    </div>
-                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card card3">
-                    <img src="img/p2.jpg" alt="">
-                    <div class="card-content green">
-                        <h2>ZAKAT</h2>
-                        <div>
-                            <button class="card-btn green">DONATE <i class="ri-arrow-right-s-line"></i></button>
-                            <a href="#">LEARN MORE</a>
-                        </div>
-                    </div>
-                    <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="card card4">
-                    <img src="img/p3.jpg" alt="">
-                    <div class="card-content red">
-                        <h2>LEBANON EMERGENCY APPEAL</h2>
-                        <div><button class="card-btn red">DONATE <i class="ri-arrow-right-s-line"></i></button>
-                            <a href="#">LEARN MORE</a>
-                        </div>
-                    </div>
-                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="card card5">
-                    <img src="img/p4.jpg" alt="">
-                    <div class="card-content green">
-                        <h2>SYRIA EMERGENCY APPEAL</h2>
-                        <div>
-                            <button class="card-btn green">DONATE <i class="ri-arrow-right-s-line"></i></button>
-                            <a href="#">LEARN MORE</a>
-                        </div>
-                    </div>
-                    <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="card card6">
-                    <img src="img/p5.jpg" alt="">
-                    <div class="card-content red">
-                        <h2>YEMEN EMERGENCY APPEAL</h2>
-                        <div>
-                            <button class="card-btn red">DONATE <i class="ri-arrow-right-s-line"></i></button>
-                            <a href="#">LEARN MORE</a>
-                        </div>
-                    </div>
-                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="card card7">
-                    <img src="img/p6.jpg" alt="">
-                    <div class="card-content red">
-                        <h2>AFGHANISTAN EMERGENCY APPEAL</h2>
-                        <div> <button class="card-btn red">DONATE <i class="ri-arrow-right-s-line"></i></button>
-                            <a href="#">LEARN MORE</a>
-                        </div>
-                    </div>
-                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="card card8">
-                    <img src="img/p7.jpg" alt="">
-                    <div class="card-content green">
-                        <h2>ORPHAN SUPPORT</h2>
-                        <div> <button class="card-btn green">DONATE &nbsp; <i
-                                    class="ri-arrow-right-s-line"></i></button>
-                            <a href="#">LEARN MORE</a>
-                        </div>
-                    </div>
-                    <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <aside>
-        <h1>changing lives and building a brighter future</h1>
-        <div class="asideinner">
-            <div class="aside1">
-                <p class="p1">Al-Mustafa Welfare Trust is a Muslim charity dedicated to eradicating global poverty, and
-                    for over 40
-                    years has been delivering life-saving humanitarian aid to the poorest countries in the world </p>
-                <p class="p2">We transform millions of lives daily through healthcare and sight restoration. Pioneering
-                    free eye
-                    camps in Pakistan, our programme now spans Asia, Africa & the Middle East, restoring sight to
-                    252,028 people.</p>
-                <p class="p3">Our projects also include <a href="#">Hifz education,</a> <a href="#">orphan care,</a>
-                    food aid, <a href="#">clean water,</a> and disaster
-                    relief in <a href="#">Gaza,</a> Yemen, Syria, Afghanistan, and Lebanon, fostering long-term change.
-                </p>
-                <button>help us build a better tomorrow <i class="ri-arrow-drop-right-line"></i></button>
-            </div>
-            <div class="aside2">
-                <img src="img/p2.jpg" alt="">
-            </div>
-        </div>
-
-
-        <div class="achievement">
-            <h2>ACHIEVEMENT HIGHLIGHTS</h2>
-            <div class="body">
-                <div class="stats-container">
-
-
-                    <div class="stats-wrapper" id="statsWrapper">
-                        <div class="stat">18M+ <span>People Reached</span></div>
-                        <div class="stat">2.1M <span>Disaster & Emergency Beneficiaries</span></div>
-                        <div class="stat beech">3.5M <span>Qurbani Meat Distribution Beneficiaries</span></div>
-                        <div class="stat">1.5M <span>Food Parcel Distributions</span></div>
-                        <div class="stat">252K <span>Cataract Surgeries</span></div>
-                        <div class="stat">1,7 M <span>Opd Screenings</span></div>
-                        <div class="stat">1,1 M <span>Eyeglasses Distributed</span></div>
-                        <div class="stat beech">752 K <span>Hepatitis Screenings</span></div>
-                        <div class="stat">18.4 K <span>Disabled Children Supported To Attend School</span></div>
-                        <div class="stat">2.1M <span>Disaster & Emergency Beneficiaries</span></div>
-                        <div class="stat">18M+ <span>People Reached</span></div>
-                        <div class="stat">2.1M <span>Disaster & Emergency Beneficiaries</span></div>
-                        <div class="stat beech">3.5M <span>Qurbani Meat Distribution Beneficiaries</span></div>
-                        <div class="stat">1.5M <span>Food Parcel Distributions</span></div>
-                        <div class="stat">252K <span>Cataract Surgeries</span></div>
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
-
-    </aside>
-
-    <div class="aside2">
-        <h2>MORE WAYS TO REACH OUT & GIVE</h2>
-
-        <div class="cards2">
-
-            <div>
-                <div><img src="img/phone-call.png" alt=""></div>
-                <h3>Donate over the phone</h3>
-                <div>
-                    <p>To donate over the phone,</p>
-                    <p>call <a href="#">0208 569 6444</a> and</p>
-                    <p>ask for the Fundraising</p>
-                    <p>Team.</p>
-                </div>
-            </div>
-            <div>
-                <div><img src="img/cheque.png" alt=""></div>
-                <h3>Donate by Cheque</h3>
-                <div>
-                    <p>To donate by cheque,</p>
-                    <p>please make it payable to</p>
-                    <p>'Al-Mustafa Welfare</p>
-                    <p>Trust' and send it to us at</p>
-                    <p>110 High Street</p>
-                    <p>HOUNSLOW, TW3 1NA</p>
-                </div>
-            </div>
-            <div>
-                <div><img src="img/love.png" alt=""></div>
-                <h3>Fundraise for AMWT®</h3>
-                <div>
-                    <p>There are loads of ways,</p>
-                    <p>you can fundraise for</p>
-                    <p>AMWT®. Fancy running a</p>
-                    <p>marathon, or jumping out</p>
-                    <p>of a plane?</p>
-                </div>
-            </div>
-            <div>
-                <div><img src="img/bank.png" alt=""></div>
-                <h3>Donate by Bank</h3>
-                <div>
-                    <p>To donate by bank please</p>
-                    <p>use account name 'Al-</p>
-                    <p>Mustafa Welfare Trust'.</p>
-                    <p>Account No. 53820168</p>
-                    <p>Sort Code: 30-90-89</p>
-                    <p>BIC: LOYDGB21256</p>
-                    <p>IBAN:</p>
-                    <p>GB18LOYD30908953820168 </p>
-                </div>
-            </div>
-        </div>
-        <p class="inform">Please inform us within 2 working days of a bank transfer being made, if not then the charity
-            will receipt it as a ‘General Donation’ in the ‘Most Needy’ project, as an anonymous donation</p>
-    </div>
-
-    <h2 class="newsh2">Latest news from Al Mustafa Welfare Trust</h2>
-    <div class="news">
-        <div class="newsinner1">
-            <div class="borders"></div>
-            <div> <img src="img/news1.jpg" alt="">
-                <button class="newstop">NEWS</button>
-            </div>
-            <div>
-                <h2>Pakistan -Flood Emergency Relief Response 2025</h2>
-            </div>
-            <div class="small"><small>July 24, 2025</small></div>
-            <div class="button-news"><button>READ MORE <i class="ri-arrow-right-s-line"></i></button></div>
-        </div>
-        <div class="newsinner2">
-            <div>
-                <div class="borders"></div>
-                <div> <img src="img/news2.jpg" alt="">
-                    <button class="newstop">NEWS</button>
-                </div>
-                <div>
-                    <h3>Al Mustafa Eye Hospital Organized Free Eye Camp for Children</h3>
-                </div>
-                <div class="small"><small>July 24, 2025</small></div>
-                <div class="button-news"><button>READ MORE <i class="ri-arrow-right-s-line"></i></button></div>
-            </div>
-
-            <div>
-                <div class="borders">
-                </div>
-                <div> <img src="img/news3.jpeg" alt="">
-                    <button class="newstop">NEWS</button>
-                </div>
-                <div>
-                    <h3>Qurbani Meat Delivered to Families across Three Continents</h3>
-                </div>
-                <div class="small"><small>June 18, 2025</small></div>
-                <div class="button-news"><button>READ MORE <i class="ri-arrow-right-s-line"></i></button></div>
-            </div>
-
-            <div>
-                <div class="borders">
-                </div>
-                <div> <img src="img/news4.jpeg" alt="">
-                    <button class="newstop">NEWS</button>
-                </div>
-                <div>
-                    <h3>Gaza's Search for Food Ends in Tears | Khan Younis Attack</h3>
-                </div>
-                <div class="small"><small>June 20, 2025</small></div>
-                <div class="button-news"><button>READ MORE <i class="ri-arrow-right-s-line"></i></button></div>
-            </div>
-
-            <div>
-                <div class="borders">
-                </div>
-                <div> <img src="img/news4.jpeg" alt="">
-                    <button class="newstop">NEWS</button>
-                </div>
-                <div>
-                    <h3>Guiding & Preparing Children Emotionally Through Qurbani</h3>
-                </div>
-                <div class="small"><small>June 04, 2025</small></div>
-                <div class="button-news"><button>READ MORE <i class="ri-arrow-right-s-line"></i></button></div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="box">
-        <p>MORE NEWS & EVENTS &nbsp;<i class="ri-arrow-right-s-line"></i></p>
+    <div class="share">
+        <h3>Share This Page</h3>
+        <div><i class="ri-facebook-fill"></i></div>
+        <div><i class="ri-twitter-x-line"></i></div>
+        <div><i class="ri-linkedin-fill"></i></div>
     </div>
 
     <div class="box2">
@@ -843,7 +966,8 @@
     <div class="footer">
         <div class="footerinner1">
             <img src="img/al-mustafa-logo-footer.png" alt="">
-            <p>Get our monthly charity updates and feedback reports on how your donations are being spent by subscribing
+            <p>Get our monthly charity updates and feedback reports on how your donations are being spent by
+                subscribing
                 to our newsletter.</p>
             <div class="inputfooter">
                 <div class="input-div"> <input type="text" placeholder="Email Address"></div>
@@ -875,8 +999,9 @@
                 <h5>0208 569 6444</h5>
             </div>
             <h4>Connect</h4>
-            <div><i class="ri-twitter-x-line"></i> <i class="ri-youtube-fill"></i> <i class="ri-facebook-fill"></i> <i
-                    class="ri-instagram-line"></i> <i class="ri-linkedin-fill"></i></div>
+            <div><i class="ri-twitter-x-line"></i> <i class="ri-youtube-fill"></i> <i class="ri-facebook-fill"></i>
+                <i class="ri-instagram-line"></i> <i class="ri-linkedin-fill"></i>
+            </div>
         </div>
     </div>
 
@@ -885,7 +1010,8 @@
             <div><img src="img/zakat-policy.png" alt="" class="zakatimg"> <img src="img/footer.jpg" alt=""
                     class="regularimg"></div>
             <div>
-                <small>© Copyright 2025. Al Mustafa Welfare Trust® is a registered charity in England & Wales (1118492)
+                <small>© Copyright 2025. Al Mustafa Welfare Trust® is a registered charity in England & Wales
+                    (1118492)
                     and UK registered company 05581896.</small>
             </div>
         </div>
@@ -899,19 +1025,15 @@
         </div>
     </footer>
 
+
+
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/superslider/dist/js/superSlider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"></script>
     <script src="app.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.stats-wrapper').super({
-                autoplay: true,
-                indicator: false,
-                // slidesToScroll: 1,
-                slidesToShow: 5,
-            });
-        });
-    </script>
 </body>
 
 </html>

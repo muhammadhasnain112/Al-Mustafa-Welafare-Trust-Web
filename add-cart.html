@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>About</title>
     <link rel="shortcut icon" href="img/al-mustafa-logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Style+Script&display=swap"
         rel="stylesheet">
@@ -27,24 +28,6 @@
 </head>
 
 <body>
-
-    <div id="icons">
-        <div>
-            <div><i class="ri-twitter-x-line"></i></div>
-        </div>
-        <div>
-            <div><i class="ri-facebook-fill"></i></div>
-        </div>
-        <div>
-            <div><i class="ri-youtube-fill"></i></div>
-        </div>
-        <div>
-            <div><i class="ri-instagram-line"></i></div>
-        </div>
-        <div>
-            <div><i class="ri-linkedin-fill"></i></div>
-        </div>
-    </div>
     <header>
         <nav>
             <div class="navinner1">
@@ -91,9 +74,8 @@
                         <div id="input2">
                             <p class="">GBP <i class="ri-arrow-down-s-line"></i>&nbsp; </p>
                             <p class="">EN <i class="ri-arrow-down-s-line"></i>&nbsp;</p>
-                            <small class="contact">CONTACT US</small>
-                            <small class="contact" onclick=" window.location.href = 'zakat-calculator.html' ">ZAKAT
-                                CALCULATOR</small>
+                            <small onclick="window.location.href ='contact.html' " class="contact">CONTACT US</small>
+                            <small class="contact">ZAKAT CALCULATOR</small>
                         </div>
                     </div>
                 </div>
@@ -112,7 +94,105 @@
                         class="ri-arrow-right-wide-line"></i></button>
             </div>
         </nav>
+
+        <h6 class="image-zakat" style="background-image: none; background-color: #007260;">
+            <div style="left: 42% !important;">
+
+                <h3>ABOUT YOU</h3>
+            </div>
+        </h6>
+
     </header>
+
+    <!-- second navbar -->
+    <div class="secondnav" id="second">
+        <div class="img">
+            <img src="https://www.almustafatrust.org/_ui/themes/almustafa/media/al-mustafa-logo-fixed.png" alt="">
+        </div>
+        <div>
+            <h5 class="border" style="padding-right: 1vw;" id="zakat2">ZAKAT <i class="ri-arrow-down-s-line"
+                    style=" color: black !important;"></i></h5>
+        </div>
+        <div>
+            <h5 class="border" style="padding-right: 1vw;" id="appeal2">APPEALS <i class="ri-arrow-down-s-line"
+                    style=" color: black !important;"></i></h5>
+        </div>
+        <div>
+            <h5 class="border" style="padding-right: 1vw;" id="involved2">GET INVOLVED <i class="ri-arrow-down-s-line"
+                    style=" color: black !important;"></i></h5>
+        </div>
+        <div>
+            <h5 class="border" style="padding-right: 1vw;" id="about2">ABOUT US <i class="ri-arrow-down-s-line"
+                    style=" color: black !important;"></i></h5>
+        </div>
+        <div class="border">
+            <div style="padding-right: 1.2vw;"><i class="ri-search-line" style="font-size: 1vw;" id="search2"></i></div>
+            <div id="inputOuter1">
+                <div>
+                    <div class="search-input3"><input type="text" placeholder="SEARCH" class=" sarchinput"> <i
+                            class="ri-search-line"></i></div>
+                    <h5 style="text-align: left !important; display: block;">POPULAR PROJECTS</h5>
+                    <h2 class="h2 green">Cataract charity appeal</h2>
+                    <h2 class="h2 pink">orphan Sponsorship</h2>
+                    <h2 class="h2 green">sponsor a hafiz</h2>
+                    <h2 class="h2 blue">water for life</h2>
+                    <h5 class="" style="margin-top: 2vw;">popular donations</h5>
+                </div>
+                <div class="inputOuter">
+                    <div>
+                        <h3>Qur'an Reading Pen</h3>
+                        <h6>For £25.00 you can help the blind read the Qur'an</h6><button>DONATE <i
+                                class="ri-arrow-right-s-line"></i></button>
+                    </div>
+                    <div>
+                        <h3>Sewing Machine</h3>
+                        <h6>For £50.00 help a mother earn her own living</h6><button>DONATE <i
+                                class="ri-arrow-right-s-line"></i></button>
+                    </div>
+                    <div>
+                        <h3>Olive Tree</h3>
+                        <h6>For £10 you can plant an Olive Tree in Gaza, Palestine.</h6><button>DONATE <i
+                                class="ri-arrow-right-s-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="border" style="padding-right: 1vw;">GBP <i class="ri-arrow-down-s-line"></i>&nbsp; </p>
+        </div>
+        <div>
+            <p class="border" style="padding-right: 1.2vw;">EN <i class="ri-arrow-down-s-line"></i>&nbsp;</p>
+        </div>
+        <div style="padding-right: 1.2vw;">
+            <small onclick="window.location.href ='contact.html' " class="contact">CONTACT US</small>
+        </div>
+        <div style="padding-right: 1.2vw;">
+            <small onclick=" window.location.href = 'zakat-calculator.html' ">ZAKAT CALCULATOR</small>
+        </div>
+        <div>
+            <button style="margin-left: 3vw;" onclick="window.location.href='donate.html' ">DONATE NOW <i
+                    class="ri-arrow-right-wide-line"></i></button>
+        </div>
+    </div>
+    <!-- second navbar end -->
+
+    <div id="icons">
+        <div>
+            <div><i class="ri-twitter-x-line"></i></div>
+        </div>
+        <div>
+            <div><i class="ri-facebook-fill"></i></div>
+        </div>
+        <div>
+            <div><i class="ri-youtube-fill"></i></div>
+        </div>
+        <div>
+            <div><i class="ri-instagram-line"></i></div>
+        </div>
+        <div>
+            <div><i class="ri-linkedin-fill"></i></div>
+        </div>
+    </div>
 
     <div class="infobar" id="infobar">
         <div class="infoinner1">
@@ -418,141 +498,98 @@
             </div>
         </div>
     </div>
-    <!-- contact us  -->
-    <div class="Contact-us">
-        <h2>Contact Us</h2>
-        <p>If you wish to contact us regarding any of our projects or donation matters then feel free to drop us an
-            email using the form below or give us a call at our head office.</p>
-        <div class="formbox">
-            <div class="form">
-                <h3>Send us a Message</h3>
-                <div><label class="label" for="">* Enquiry Subject</label>
-                    <select name="" id="">
-                        <option value="">Select Option</option>
-                        <option value="">Donation question</option>
-                        <option value="">Islamic calendar request</option>
-                        <option value="">Appeals</option>
-                        <option value="">Other</option>
-                    </select>
-                </div>
-                <div>
-                    <input type="text" placeholder="Name *" class="form-input">
-                </div>
-                <div>
-                    <input type="email" placeholder="Email Address *" class="form-input">
-                </div>
-                <div>
-                    <textarea name="" id="" placeholder="Message *"></textarea>
-                </div>
-                <div>
-                    <h3>Your donations make the difference. Sign up to our updates today to allow us to show you exactly
-                        how we distribute and make use of your contributions. We will also provide you details regarding
-                        our upcoming projects and campaigns for those that need it most:</h3>
-                </div>
-                <div class="check-box">
+
+    <div class="information">
+        <div class="informationinner1">
+            <h3>Donation Summary</h3>
+            <div>
+
+                <div style="border: none;">
                     <div>
-                        <div><input type="checkbox"></div>
-                        <div><label> I’m happy to receive emails</label></div>
+                        <h3 class="green-zakat">zakat</h3>
+                        <h4 class="green-zakat-h4">Zakat Single Payment</h4>
                     </div>
                     <div>
-                        <div><input type="checkbox"></div>
-                        <div><label for=""> I’m happy to receive post</label></div>
+                        <h2 class="green-zakat-h2">Rs:0:00</h2>
                     </div>
                 </div>
 
-                <p>* Required</p>
-                <div class="recaptcha-box">
-                    <input type="checkbox" id="robotCheck">
-                    <label for="robotCheck">I'm not a robot</label>
-                    <div class="recaptcha-logo">
-                        <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
-                        <div>reCAPTCHA</div>
+                <div id="olive-tree" style="border: none; margin-top: 1vw;" class="olive-tree">
+                    <div>
+                        <h3>OLIVE TREE</h3>
+                        <p>Single Payment Zakat</p>
+                        <div class="plus-minus-boxes">
+                            <div style="border-right: none !important;" id="minus2"><i class="ri-subtract-line"></i>
+                            </div>
+                            <div style="border-right: none !important;" id="counter2">1</div>
+                            <div id="plus2"><i class="ri-add-line"></i></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 id="zakatvalue2">Rs:10.00</h3>
+                        <p><a href="#" onclick="remove1()">Remove</a></p>
                     </div>
                 </div>
-                <div><button>Submit <i class="ri-arrow-right-s-line"></i></button></div>
-            </div>
 
-            <div class="formrelative">
-                <h2>head office</h2>
-                <h3>address</h3>
-                <h4>Al Mustafa Welfare Trust
-                    International Ltd</h4>
-                <p>110 High Street</p>
-                <p>Hounslow</p>
-                <p>TW3 1NA</p>
-                <h3 class="a">Phone</h3>
-                <p>Tel: <a href="#">0208 569 6444</a></p>
-                <h3 class="a">Email</h3>
-                <p><a href="#">info@almustafatrust.org</a></p>
+                <h3>Help us further</h3>
+                <div>
+                    <div>
+                        <h6 class="help-h6">Plant an Olive Tree in <br>Palestine</h6>
+                        <h3 class="help-h3"><input type="checkbox" id="check-box1"> Olive Tree</h3>
+                    </div>
+                    <div>
+                        <h3 class="help-h3-black">Rs: 10.00</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <h6 class="help-h6">Eye Project</h6>
+                        <h3 class="help-h3"><input type="checkbox" id="check-box1">Qur'an Reading Pen</h3>
+                    </div>
+                    <div>
+                        <h3 class="help-h3-black">Rs: 25.00</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <h6 class="help-h6">Administration</h6>
+                        <h3 class="help-h3"><input type="checkbox" id="check-box1">Administration Fee</h3>
+                    </div>
+                    <div>
+                        <h3 class="help-h3-black">Rs: 1.00</h3>
+                    </div>
+                </div>
+
+                <div style="border: none; margin-top: 5vw;">
+                    <h3 class="total-last">Total</h3>
+                    <h4 class="total-last-rupe">RS:0:00</h4>
+                </div>
+
             </div>
         </div>
-
-
-        <p class="member">Member of Fundraising Standards Board <br>
-            Member of Charity Commission: No. 1118492</p>
-
-
-
+        <div class="informationinner2"></div>
     </div>
-    <!-- contact us  end -->
 
 
-    <div class="aside2" style="border-top: 1px solid rgba(128, 128, 128, 0.266); border-bottom: none;">
-        <h2>MORE WAYS TO REACH OUT & GIVE</h2>
 
-        <div class="cards2">
 
-            <div>
-                <div><img src="img/phone-call.png" alt=""></div>
-                <h3>Donate over the phone</h3>
-                <div>
-                    <p>To donate over the phone,</p>
-                    <p>call <a href="#">0208 569 6444</a> and</p>
-                    <p>ask for the Fundraising</p>
-                    <p>Team.</p>
-                </div>
-            </div>
-            <div>
-                <div><img src="img/cheque.png" alt=""></div>
-                <h3>Donate by Cheque</h3>
-                <div>
-                    <p>To donate by cheque,</p>
-                    <p>please make it payable to</p>
-                    <p>'Al-Mustafa Welfare</p>
-                    <p>Trust' and send it to us at</p>
-                    <p>110 High Street</p>
-                    <p>HOUNSLOW, TW3 1NA</p>
-                </div>
-            </div>
-            <div>
-                <div><img src="img/love.png" alt=""></div>
-                <h3>Fundraise for AMWT®</h3>
-                <div>
-                    <p>There are loads of ways,</p>
-                    <p>you can fundraise for</p>
-                    <p>AMWT®. Fancy running a</p>
-                    <p>marathon, or jumping out</p>
-                    <p>of a plane?</p>
-                </div>
-            </div>
-            <div>
-                <div><img src="img/bank.png" alt=""></div>
-                <h3>Donate by Bank</h3>
-                <div>
-                    <p>To donate by bank please</p>
-                    <p>use account name 'Al-</p>
-                    <p>Mustafa Welfare Trust'.</p>
-                    <p>Account No. 53820168</p>
-                    <p>Sort Code: 30-90-89</p>
-                    <p>BIC: LOYDGB21256</p>
-                    <p>IBAN:</p>
-                    <p>GB18LOYD30908953820168 </p>
-                </div>
-            </div>
-        </div>
-        <!-- <p class="inform">Please inform us within 2 working days of a bank transfer being made, if not then the charity
-            will receipt it as a ‘General Donation’ in the ‘Most Needy’ project, as an anonymous donation</p> -->
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="box2">
         <h2>AMWT® Projects & More</h2>
@@ -563,80 +600,6 @@
         <p>Build a School</p>
         <p>Islamic Resources</p>
     </div>
-
-    <!-- second nav  -->
-    <div class="secondnav" id="second">
-        <div class="img">
-            <img src="https://www.almustafatrust.org/_ui/themes/almustafa/media/al-mustafa-logo-fixed.png" alt="">
-        </div>
-        <div>
-            <h5 class="border" style="padding-right: 1vw;" id="zakat2">ZAKAT <i class="ri-arrow-down-s-line"
-                    style=" color: black !important;"></i></h5>
-        </div>
-        <div>
-            <h5 class="border" style="padding-right: 1vw;" id="appeal2">APPEALS <i class="ri-arrow-down-s-line"
-                    style=" color: black !important;"></i></h5>
-        </div>
-        <div>
-            <h5 class="border" style="padding-right: 1vw;" id="involved2">GET INVOLVED <i class="ri-arrow-down-s-line"
-                    style=" color: black !important;"></i></h5>
-        </div>
-        <div>
-            <h5 class="border" style="padding-right: 1vw;" id="about2">ABOUT US <i class="ri-arrow-down-s-line"
-                    style=" color: black !important;"></i></h5>
-        </div>
-        <div class="border">
-            <div style="padding-right: 1.2vw;"><i class="ri-search-line" style="font-size: 1vw;" id="search2"></i></div>
-            <div id="inputOuter1">
-                <div>
-                    <div class="search-input3"><input type="text" placeholder="SEARCH" class=" sarchinput"> <i
-                            class="ri-search-line"></i></div>
-                    <h5 style="text-align: left !important; display: block;">POPULAR PROJECTS</h5>
-                    <h2 class="h2 green">Cataract charity appeal</h2>
-                    <h2 class="h2 pink">orphan Sponsorship</h2>
-                    <h2 class="h2 green">sponsor a hafiz</h2>
-                    <h2 class="h2 blue">water for life</h2>
-                    <h5 class="" style="margin-top: 2vw;">popular donations</h5>
-                </div>
-                <div class="inputOuter">
-                    <div>
-                        <h3>Qur'an Reading Pen</h3>
-                        <h6>For £25.00 you can help the blind read the Qur'an</h6><button>DONATE <i
-                                class="ri-arrow-right-s-line"></i></button>
-                    </div>
-                    <div>
-                        <h3>Sewing Machine</h3>
-                        <h6>For £50.00 help a mother earn her own living</h6><button>DONATE <i
-                                class="ri-arrow-right-s-line"></i></button>
-                    </div>
-                    <div>
-                        <h3>Olive Tree</h3>
-                        <h6>For £10 you can plant an Olive Tree in Gaza, Palestine.</h6><button>DONATE <i
-                                class="ri-arrow-right-s-line"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <p class="border" style="padding-right: 1vw;">GBP <i class="ri-arrow-down-s-line"></i>&nbsp; </p>
-        </div>
-        <div>
-            <p class="border" style="padding-right: 1.2vw;">EN <i class="ri-arrow-down-s-line"></i>&nbsp;</p>
-        </div>
-        <div style="padding-right: 1.2vw;">
-            <small class="contact">CONTACT US</small>
-        </div>
-        <div style="padding-right: 1.2vw;">
-            <small onclick=" window.location.href = 'zakat-calculator.html' ">ZAKAT CALCULATOR</small>
-        </div>
-        <div>
-            <button style="margin-left: 3vw;" onclick="window.location.href='donate.html' ">DONATE NOW <i
-                    class="ri-arrow-right-wide-line"></i></button>
-        </div>
-    </div>
-
-
-    <!-- second nave end -->
 
     <div class="footer">
         <div class="footerinner1">
@@ -700,8 +663,9 @@
 
 
 
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"></script>
     <script src="app.js"></script>
 </body>
 

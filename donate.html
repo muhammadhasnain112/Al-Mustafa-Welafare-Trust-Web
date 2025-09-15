@@ -28,7 +28,6 @@
 <style>
     .cards-container {
         height: 100% !important;
-        /* border: 1px solid red !important; */
         margin-top: 0px !important;
     }
 
@@ -58,6 +57,7 @@
         height: 27vw;
         /* border: 10px solid wheat; */
         display: flex;
+
         position: relative;
         box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.096);
 
@@ -67,6 +67,7 @@
         /* border: 1px solid red; */
         display: flex;
         flex-direction: column;
+        gap: 1vw;
     }
 
     .card9 img {
@@ -182,7 +183,7 @@
                             <p class="">GBP <i class="ri-arrow-down-s-line"></i>&nbsp; </p>
                             <p class="">EN <i class="ri-arrow-down-s-line"></i>&nbsp;</p>
                             <small onclick="window.location.href ='contact.html' " class="contact">CONTACT US</small>
-                            <small class="contact">ZAKAT CALCULATOR</small>
+                            <small class="contact" onclick=" window.location.href = 'zakat-calculator.html' ">ZAKAT CALCULATOR</small>
                         </div>
                     </div>
                 </div>
@@ -203,6 +204,7 @@
 
 
     </header>
+
     <div class="infobar" id="infobar">
         <div class="infoinner1">
             <h3 class="eye"><i class="ri-eye-line"></i> Sight Restoration <br>Programme</h3>
@@ -346,8 +348,6 @@
         </div>
     </div>
 
-
-
     <div class="infobar3" id="infobar3">
         <div class="info3inner1">
             <div class="volunter">
@@ -425,8 +425,6 @@
             </div>
         </div>
     </div>
-
-
 
     <div class="infobar4" id="infobar4">
         <div class="info3inner1">
@@ -508,9 +506,6 @@
         </div>
     </div>
 
-
-
-    <!-- second navbar -->
     <div class="secondnav" id="second">
         <div class="img">
             <img src="https://www.almustafatrust.org/_ui/themes/almustafa/media/al-mustafa-logo-fixed.png" alt="">
@@ -573,19 +568,17 @@
             <small onclick="window.location.href ='contact.html' " class="contact">CONTACT US</small>
         </div>
         <div style="padding-right: 1.2vw;">
-            <small>ZAKAT CALCULATOR</small>
+            <small onclick=" window.location.href = 'zakat-calculator.html' ">ZAKAT CALCULATOR</small>
         </div>
         <div>
             <button style="margin-left: 3vw;">DONATE NOW <i class="ri-arrow-right-wide-line"></i></button>
         </div>
     </div>
-    <!-- second navbar end -->
 
     <div class="donatesec">
         <h2>Donate today & save lives</h2>
         <h3>Every Zakat donation has the potential for profound impact.</h3>
     </div>
-
 
     <main>
         <div>
@@ -615,6 +608,7 @@
             <button>DONATE NOW</button>
         </div>
     </main>
+
     <section>
         <div class="cards-container">
             <div class="cards">
@@ -624,10 +618,10 @@
                     <div class=" card-content1 red"></div>
                     <div class="card-content red">
                         <h2>PAKISTAN FLOODS EMERGENCY</h2>
-                        <button class="card-btn red" style="margin-top: 2.6vw;">DONATE</button>
+                        <button class="card-btn red">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
                 <!-- Card 2 -->
@@ -635,10 +629,10 @@
                     <img src="img/p1.jpg" alt="">
                     <div class="card-content red">
                         <h2>PALESTINE & GAZA EMERGENCY APPEAL</h2>
-                        <button class="card-btn red" style="margin-top: 0vw;">DONATE</button>
+                        <button class="card-btn red">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
                 <!-- Card 3 -->
@@ -647,10 +641,10 @@
                     <div class="card-content green">
                         <h2>ZAKAT</h2>
                         <br>
-                        <button class="card-btn green" style="margin-top: 4.5vw;">DONATE</button>
+                        <button class="card-btn green">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
                 <!-- Card 4 -->
@@ -658,10 +652,10 @@
                     <img src="img/p3.jpg" alt="">
                     <div class="card-content red">
                         <h2>LEBANON EMERGENCY APPEAL</h2>
-                        <button class="card-btn red" style="margin-top: 0vw;">DONATE</button>
+                        <button class="card-btn red">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
                 <!-- Card 5 -->
@@ -670,10 +664,10 @@
                     <div class="card-content green">
                         <h2>SYRIA EMERGENCY APPEAL</h2>
                         <br>
-                        <button class="card-btn green" style="margin-top: 1.5vw;">DONATE</button>
+                        <button class="card-btn green">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
                 <!-- Card 6 -->
@@ -682,10 +676,10 @@
                     <div class="card-content red">
                         <h2>YEMEN EMERGENCY APPEAL</h2>
                         <br>
-                        <button class="card-btn red" style="margin-top: 1.6vw;">DONATE</button>
+                        <button class="card-btn red">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
                 <!-- Card 7 -->
@@ -693,10 +687,10 @@
                     <img src="img/p6.jpg" alt="">
                     <div class="card-content red">
                         <h2>AFGHANISTAN EMERGENCY APPEAL</h2>
-                        <button class="card-btn red" style="margin-top: 0vw;">DONATE</button>
+                        <button class="card-btn red">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer red"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
                 <!-- Card 8 -->
@@ -704,10 +698,10 @@
                     <img src="img/p7.jpg" alt="">
                     <div class="card-content green">
                         <h2>ORPHAN SUPPORT</h2>
-                        <button class="card-btn green" style="margin-top: 5.4vw;">DONATE</button>
+                        <button class="card-btn green">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
                 <!-- Card 9 -->
@@ -724,8 +718,8 @@
                             victims of modern slavery are children.</p>
                         <button class="card-btn green">DONATE</button>
                         <a href="#">LEARN MORE</a>
-                        <!-- </div> -->
-                        <div class="abbc">ZAKAT APPLICABLE</div>
+
+                        <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                     </div>
                 </div>
 
@@ -734,10 +728,10 @@
                     <img src="img/p9.jpg" alt="">
                     <div class="card-content green">
                         <h2>BREAK THE HUNGER</h2>
-                        <button class="card-btn green" style="margin-top: 0vw;">DONATE</button>
+                        <button class="card-btn green">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
                 <!-- Card 11 -->
@@ -746,10 +740,10 @@
                     <div class="card-content green">
                         <h2>Homeless Project</h2>
                         <br>
-                        <button class="card-btn green" style="margin-top: 4.5vw;">DONATE</button>
+                        <button class="card-btn green">DONATE</button>
                         <a href="#">LEARN MORE</a>
                     </div>
-                    <div class="card-footer">ZAKAT APPLICABLE</div>
+                    <div class="card-footer green"><i class="ri-hand-heart-line"></i> ZAKAT APPLICABLE</div>
                 </div>
 
 
@@ -758,7 +752,8 @@
             </div>
         </div>
     </section>
-<div id="icons">
+
+    <div id="icons">
         <div>
             <div><i class="ri-twitter-x-line"></i></div>
         </div>
@@ -776,8 +771,7 @@
         </div>
     </div>
 
-
-<div class="aside2">
+    <div class="aside2">
         <h2>MORE WAYS TO REACH OUT & GIVE</h2>
 
         <div class="cards2">
@@ -830,9 +824,10 @@
                 </div>
             </div>
         </div>
-      
+
     </div>
-<div class="box2">
+
+    <div class="box2">
         <h2>AMWT® Projects & More</h2>
         <p>Zakat Fund</p>
         <p>Orphan Sponsorship</p>
@@ -841,13 +836,15 @@
         <p>Build a School</p>
         <p>Islamic Resources</p>
     </div>
- <div class="footer">
+
+    <div class="footer">
         <div class="footerinner1">
             <img src="img/al-mustafa-logo-footer.png" alt="">
             <p>Get our monthly charity updates and feedback reports on how your donations are being spent by subscribing
                 to our newsletter.</p>
-            <div class="inputfooter"> <input type="text" placeholder="Email Address">
-                <button><i class="ri-arrow-right-s-line"></i></button>
+            <div class="inputfooter">
+                <div class="input-div"> <input type="text" placeholder="Email Address"></div>
+                <div class="input-button"><button> <i class="ri-arrow-right-s-line"></i></button></div>
             </div>
         </div>
         <div class="footerinner2">
@@ -903,7 +900,7 @@
 
 
 
-        <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
