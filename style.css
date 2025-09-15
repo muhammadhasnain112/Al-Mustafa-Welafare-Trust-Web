@@ -2180,7 +2180,6 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     padding: 0vw 3vw;
-    /* border: 1px solid rebeccapurple; */
 }
 
 .formrelative>h2 {
@@ -2267,7 +2266,6 @@ footer a:hover {
     display: flex;
     padding: 2vw 10vw;
     gap: 1vw;
-    /* justify-content: space-around; */
     border-top: 1px solid rgba(0, 0, 0, 0.171);
 }
 
@@ -2317,7 +2315,6 @@ footer a:hover {
     justify-content: center;
     gap: 1vw;
     align-items: start;
-    /* border: 1px solid red; */
     background-color: #F1F1F1;
 }
 
@@ -2326,7 +2323,6 @@ footer a:hover {
     height: 83%;
     width: 39.5%;
     background-color: #fff;
-    /* position: relative; */
 }
 
 .zakat-imagebar img {
@@ -2418,7 +2414,6 @@ footer a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .zakat-already>div {
@@ -2444,7 +2439,6 @@ footer a:hover {
     padding: 0.2vw 2.5vw;
     height: 3vw;
     font-size: 1vw;
-    /* color: #009688; */
     outline: none;
     border: 2px solid rgba(128, 128, 128, 0.277);
 }
@@ -2483,7 +2477,6 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* border: 1px solid red; */
 }
 
 .calculator>div {
@@ -2497,15 +2490,12 @@ footer a:hover {
 
 .calculator>div>div {
     width: 100%;
-    /* height: 20%; */
-    /* border: 1px solid yellowgreen; */
 }
 
 .calc-inner1 {
     height: 8vw;
     display: flex;
     flex-direction: column;
-    /* align-items: center;/ */
     justify-content: space-around;
     gap: 1vw;
 }
@@ -2531,7 +2521,6 @@ footer a:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
-    /* padding: 0.5vw 1vw; */
 }
 
 .calc-inner1 h6 {
@@ -2563,7 +2552,6 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* border: 1px solid aqua; */
 }
 
 .calc-inner2 h3 {
@@ -2606,7 +2594,6 @@ footer a:hover {
     font-size: 0.9vw;
     display: flex;
     justify-content: space-between;
-    /* gap: 9vw; */
     padding: 0vw 1vw;
     align-items: center;
     border-right: 1px solid rgba(128, 128, 128, 0.277);
@@ -2656,7 +2643,6 @@ footer a:hover {
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
-    /* border:  1px solid rebeccapurple; */
 }
 
 .calc-inner3 h3 {
@@ -2674,7 +2660,6 @@ footer a:hover {
     width: 80%;
     display: flex;
     align-items: center;
-
     font-family: Lato, sans-serif;
 }
 
@@ -2720,7 +2705,6 @@ footer a:hover {
     background-color: #F1F1F1;
     height: 28vw;
     width: 100%;
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     gap: 1vw;
@@ -2731,7 +2715,6 @@ footer a:hover {
     height: 92%;
     width: 40%;
     background-color: #fff;
-    /* border: 1px solid yellowgreen; */
     position: relative;
     padding: 3vw 2vw;
 }
@@ -2794,7 +2777,6 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     gap: 2vw;
-    /* border: 1px solid yellowgreen; */
 }
 
 .baradiv>h3 {
@@ -2861,7 +2843,6 @@ footer a:hover {
     background-color: #F1F1F1;
     height: 20vw;
     width: 100%;
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     gap: 1vw;
@@ -2871,7 +2852,6 @@ footer a:hover {
     background-color: #F1F1F1;
     height: 23vw;
     width: 100%;
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     gap: 1vw;
@@ -2885,7 +2865,6 @@ footer a:hover {
 .chotadiv3 {
     height: 85%;
     width: 40%;
-
     background-color: #fff;
 }
 
@@ -2900,7 +2879,6 @@ footer a:hover {
     background-color: #F1F1F1;
     height: 40vw;
     width: 100%;
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     gap: 1vw;
@@ -2909,7 +2887,6 @@ footer a:hover {
 .baradiv4 {
     height: 95%;
     width: 40%;
-
     background-color: #fff;
 }
 
@@ -2937,14 +2914,17 @@ footer a:hover {
     font-size: 0.9vw;
     line-height: 1.2vw;
     color: rgb(116, 116, 116);
-    /* font-style:italic ; */
     font-weight: 700;
 
+}.chotadiv4>p{
+    font-size: 1vw;
+    word-spacing: 0.5vw;
+    line-height: 1.4vw;
+    opacity: 0.7;
+    margin-top: 1vw;
 }
 
 .donate-bar {
-    /* overflow: scroll; */
-    /* overflow-x: hidden; */
     opacity: 0;
     visibility: hidden;
     transform: translatex(10px);
@@ -2982,7 +2962,6 @@ footer a:hover {
     font-size: 1.5vw;
     font-weight: 900;
     text-transform: uppercase;
-    /* padding-bottom: 0.8vw; */
     border-bottom: 1px solid black;
 }
 
@@ -3003,7 +2982,6 @@ footer a:hover {
     display: flex;
     flex-direction: column;
 
-    /* gap: 1vw; */
 }
 
 #zakat-calc a {
@@ -3210,14 +3188,12 @@ footer a:hover {
 }
 
 .information {
-    border: 1px solid red;
-    height: 100vw;
+    height: 124vw;
     display: flex;
 }
 
-.information>div {
+.informationinner1 {
     height: 100%;
-    border: 1px solid brown;
     padding-left: 10vw;
     padding-right: 2vw;
 }
@@ -3242,18 +3218,14 @@ footer a:hover {
     width: 100%;
     padding: 1.2vw;
     max-height: 100%;
-    /* height: 20vw; */
     background-color: #ECECEC;
-    /* border: 1px solid red; */
 }
 
 .informationinner1>div>div {
-    /* border: 1px solid red; */
     display: flex;
     background-color: #fff;
     padding: 1.2vw;
-    /* gap: 1vw; */
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.437);
     justify-content: space-between;
 }
 
@@ -3271,10 +3243,10 @@ footer a:hover {
 }
 
 .green-zakat-h2 {
-    font-family: Lato, sans-serif;
-    font-size: 2vw;
-    font-weight: 900;
-    opacity: 0.7;
+    font-family: Oswald, sans-serif;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .informationinner1>div>h3 {
@@ -3296,7 +3268,6 @@ footer a:hover {
 .help-h3 {
     font-family: Oswald, sans-serif;
     color: rgb(153, 153, 153);
-
     font-weight: 900;
     text-transform: uppercase;
     font-size: 1.5vw;
@@ -3334,16 +3305,251 @@ footer a:hover {
     font-family: Lato, sans-serif;
     font-weight: 900;
     color: rgb(0, 155, 131);
-    font-size: 1.8vw;
-    /* text-transform: uppercase; */
+    font-size: 1.6vw;
 }
 
 .olive-tree>div {
     display: flex;
+    gap: 0.5vw;
     flex-direction: column;
     justify-content: space-around;
-}.plus-minus-boxes{
-    
+}
+
+.olive-tree h3 {
+    font-family: Oswald, sans-serif;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.olive-tree p {
+    font-family: Lato, sans-serif;
+    font-size: 1vw;
+}
+
+.plus-minus-boxes {
+    display: flex;
+
+}
+
+.olive-tree a {
+    color: #009688;
+    text-decoration: none;
+    margin-left: 3.5vw;
+}
+
+
+.plus-minus-boxes>div {
+    width: 2vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3vw;
+    opacity: 0.9;
+    font-family: Lato, sans-serif;
+    border: 2px solid #009688;
+}
+
+.green-text-info {
+    color: #009688;
+}
+
+.olive-tree small {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+}
+
+.infoiner-iner1 {
+    padding: 1.5vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    width: 100% !important;
+}
+
+.infoiner-iner1>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    font-size: 0.9vw;
+    width: 85%;
+}
+
+.infoiner-iner1 h2 {
+    font-family: Oswald, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.8vw;
+    opacity: 0.8;
+    padding-top: 1vw;
+}
+
+.infoiner-iner1 select {
+    height: 3vw;
+    width: 37vw;
+    font-family: lato, sans-serif;
+    font-weight: 400;
+    font-size: 0.9vw;
+    padding: 0.8vw;
+    outline: none;
+    appearance: none;
+    background-image: url(img/arrow.png);
+    background-position: right 1vw center;
+    background-size: 0.9vw;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    border: 1px solid rgba(128, 128, 128, 0.735);
+}
+
+.infoiner-iner1 input {
+    border: 1px solid rgba(128, 128, 128, 0.735);
+    height: 3vw;
+    width: 37vw;
+    font-family: lato, sans-serif;
+    font-weight: 400;
+    font-size: 0.9vw;
+    padding: 0.8vw;
+    outline: none;
+}
+
+.infoiner-iner1 h3 {
+    font-family: lato, sans-serif;
+    font-weight: 700;
+    font-size: 0.9vw;
+    width: 85%;
+}
+
+.infoiner-iner1 p {
+    font-family: lato, sans-serif;
+    font-weight: 400;
+    font-size: 0.9vw;
+    opacity: 0.8;
+    width: 80%;
+}
+
+.check-box3 {
+    align-items: center;
+    justify-content: start !important;
+
+}
+
+.check-box3 p {
+    font-size: 0.8vw;
+    width: 100%;
+}
+
+.check-box3 input {
+    width: 80%;
+    height: 80%;
+    accent-color: white;
+    border: 1px solid black;
+}
+
+.check-box-inner {
+    height: 1.5vw;
+    width: 2vw;
+    display: flex;
+    align-items: center;
+}
+
+.infoiner-iner1 small {
+    font-size: 0.7vw;
+    margin-top: 2vw;
+    line-height: 1vw;
+    font-family: Lato, sans-serif;
+    opacity: 0.7;
+    width: 85%;
+    border-bottom: 1px solid gray;
+    padding-bottom: 1vw;
+}
+
+.infoiner-iner1 a {
+    color: #009688;
+    opacity: 1 !important;
+}
+
+.infoiner-iner1 a:hover {
+    color: #096d63;
+}
+
+.pay {
+    margin-left: 29%;
+    width: 40%;
+    height: 2.5vw;
+    background-color: #009688;
+    border-radius: 5px;
+    font-family: Lato, sans-serif;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8vw;
+    letter-spacing: 0.1vw;
+}
+
+.pay:hover {
+    background-color: #0c786d;
+    cursor: pointer;
+}
+
+.check:hover {
+
+    background-color: rgb(227, 173, 48);
+    cursor: pointer;
+}
+
+.check {
+    margin-left: 29%;
+    width: 40%;
+    height: 2.5vw;
+    background-color: rgb(242, 186, 54);
+    border-radius: 5px;
+    font-family: Lato, sans-serif;
+    font-size: 0.8vw;
+    letter-spacing: 0.1vw;
+    position: relative;
+}
+
+
+.info-img-bar1 {
+    width: 1.2vw;
+    left: 20%;
+    top: 20%;
+    position: absolute;
+}
+
+.info-img-bar2 {
+    width: 2.5vw;
+    left: 27%;
+    top: 27%;
+    position: absolute;
+}
+.giftaid{
+    width: 10vw;
+}
+.span2 {
+    position: absolute;
+    color: #000;
+    left: 45%;
+    top: 27%;
+}
+
+.span3 {
+    font-family: Lato, sans-serif;
+    gap: 0px !important;
+    width: 85%;
+    text-align: center;
+}
+
+article {
+    font-family: Lato, sans-serif;
+    font-style: italic;
+    font-size: 0.7vw;
+    opacity: 0.7;
+    width: 88%;
+
 }
 
 @media (max-width:768px) {

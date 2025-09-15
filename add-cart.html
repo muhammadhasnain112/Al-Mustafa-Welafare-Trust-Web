@@ -510,33 +510,54 @@
                         <h4 class="green-zakat-h4">Zakat Single Payment</h4>
                     </div>
                     <div>
-                        <h2 class="green-zakat-h2">Rs:0:00</h2>
+                        <h2 class="green-zakat-h2" id="info-zakat-show">Rs:0:00</h2>
                     </div>
                 </div>
 
-                <div id="olive-tree" style="border: none; margin-top: 1vw;" class="olive-tree">
+                <div id="olive-tree" style="border: none; margin-top: 1vw; display: none;" class="olive-tree">
                     <div>
-                        <h3>OLIVE TREE</h3>
-                        <p>Single Payment Zakat</p>
-                        <div class="plus-minus-boxes">
-                            <div style="border-right: none !important;" id="minus2"><i class="ri-subtract-line"></i>
-                            </div>
-                            <div style="border-right: none !important;" id="counter2">1</div>
-                            <div id="plus2"><i class="ri-add-line"></i></div>
-                        </div>
+                        <h3 class="green-text-info">OLIVE TREE</h3>
+                        <small>Plant an Olive Tree, one off</small>
+                        <p>General Donation, <br> Single Payment</p>
+
                     </div>
 
                     <div>
-                        <h3 id="zakatvalue2">Rs:10.00</h3>
-                        <p><a href="#" onclick="remove1()">Remove</a></p>
+                        <h3 id="olive-tree-rupe">Rs:10.00</h3>
+
+                    </div>
+                </div>
+
+                <div id="Quran-reading" style="border: none; margin-top: 1vw; display: none;" class="olive-tree">
+                    <div>
+                        <h3 class="green-text-info">Qur'an Reading Pen</h3>
+                        <small>Qu'ran Reading Pen, one off</small>
+                        <p>General Donation, <br> Single Payment</p>
+
+                    </div>
+
+                    <div>
+                        <h3 id="Quran-rupe">Rs:25.00</h3>
+                    </div>
+                </div>
+                <div id="Administration" style="border: none; margin-top: 1vw; display: none;" class="olive-tree">
+                    <div>
+                        <h3 class="green-text-info">Administration</h3>
+                        <p>General Donation, <br> Single Payment</p>
+
+                    </div>
+
+                    <div>
+                        <h3 id="Administration-rupe">Rs: 1.00</h3>
                     </div>
                 </div>
 
                 <h3>Help us further</h3>
+
                 <div>
                     <div>
                         <h6 class="help-h6">Plant an Olive Tree in <br>Palestine</h6>
-                        <h3 class="help-h3"><input type="checkbox" id="check-box1"> Olive Tree</h3>
+                        <h3 class="help-h3" id="check-box1-text"><input type="checkbox" id="check-box1"> Olive Tree</h3>
                     </div>
                     <div>
                         <h3 class="help-h3-black">Rs: 10.00</h3>
@@ -546,17 +567,19 @@
                 <div>
                     <div>
                         <h6 class="help-h6">Eye Project</h6>
-                        <h3 class="help-h3"><input type="checkbox" id="check-box1">Qur'an Reading Pen</h3>
+                        <h3 class="help-h3" id="check-box2-text"><input type="checkbox" id="check-box2">Qur'an Reading
+                            Pen</h3>
                     </div>
                     <div>
                         <h3 class="help-h3-black">Rs: 25.00</h3>
                     </div>
                 </div>
 
-                <div>
+                <div style="border: none;">
                     <div>
                         <h6 class="help-h6">Administration</h6>
-                        <h3 class="help-h3"><input type="checkbox" id="check-box1">Administration Fee</h3>
+                        <h3 class="help-h3" id="check-box3-text"><input type="checkbox" id="check-box3">Administration
+                            Fee</h3>
                     </div>
                     <div>
                         <h3 class="help-h3-black">Rs: 1.00</h3>
@@ -565,12 +588,180 @@
 
                 <div style="border: none; margin-top: 5vw;">
                     <h3 class="total-last">Total</h3>
-                    <h4 class="total-last-rupe">RS:0:00</h4>
+                    <h4 class="total-last-rupe" id="total-zakat-show">RS:0:00</h4>
                 </div>
 
             </div>
         </div>
-        <div class="informationinner2"></div>
+        <div class="informationinner2">
+            <div class="infoiner-iner1">
+                <h2>Your Information</h2>
+                <div>
+                    <div><label for="">
+                            <h4>Title *</h4>
+                        </label></div>
+                    <div><select name="" id="">
+                            <option value="" selected></option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Dr">Dr</option>
+                            <option value="Prof">Prof</option>
+                        </select></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4>First Name *</h4>
+                    </div>
+                    <div><input type="text"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4>Last Name *</h4>
+                    </div>
+                    <div><input type="text"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4>Email Address *</h4>
+                    </div>
+                    <div><input type="text"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4>Home Phone</h4>
+                    </div>
+                    <div><input type="text"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4>Mobile Number </h4>
+                    </div>
+                    <div><input type="text"></div>
+                </div>
+                <h2 style="border-top: 1px solid gray; width: 85%; gap: 1.5vw;">Billing Address</h2>
+                <div>
+                    <div>
+                        <h4>Address *</h4>
+                    </div>
+                    <div><input type="text"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4></h4>
+                    </div>
+                    <div><input type="text"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4>Postcode *</h4>
+                    </div>
+                    <div><input type="text"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4>County</h4>
+                    </div>
+                    <div><input type="text"></div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4>Country *</h4>
+                    </div>
+                    <div>
+                        <select name="" id="select"></select>
+                    </div>
+                </div>
+                <h2 style="border-top: 1px solid gray; width: 85%; gap: 1.5vw;">How did you find us?</h2>
+
+                <div>
+                    <div>
+                        <h4>Select option *</h4>
+                    </div>
+                    <div>
+                        <select name="" id="select2"></select>
+                    </div>
+                </div>
+                <h3>Stay in touch for your Feedback and life-changing moments.</h3>
+                <p>We would really like to provide you with the feedback of your donations and keep in touch with you to
+                    share the latest info on our work.</p>
+
+                <div class="check-box3" style="margin-top: 1vw;">
+                    <div class="check-box-inner"><input type="checkbox"></div>
+                    <div>
+                        <p>Yes, I am happy to receive emails</p>
+                    </div>
+                </div>
+                <div class="check-box3">
+                    <div class="check-box-inner"><input type="checkbox"></div>
+                    <div>
+                        <p> Yes, I am happy to receive text messages (SMS)</p>
+                    </div>
+                </div>
+
+                <small>You can opt-out at any time via email <a href="#">info@almustafatrust.org</a> or call <a
+                        href="#"> +44 (0)208 5696 444.</a> Your
+                    privacy is important to us. We will only use your data to process your donation, personalise your
+                    supporter experience, and undertake services you have requested or would reasonably expect. Full
+                    details can be found in our <a href="#">Privacy Policy</a>.</small>
+
+                <img src="img/giftaid.gif" alt="" class="giftaid">
+
+                <h3><b>25% Increase in your donation with no extra cost to you: </b>if you are a UK taxpayer and you
+                    select to 'Gift Aid' your donation will make it worth more to us. Please tick the box below to
+                    confirm that you have read the Gift Aid Conditions below, and that you are eligible to 'Gift Aid'
+                    your donation and wish to do so.</h3>
+                <div class="check-box3" style="margin-top: 1vw;">
+                    <div class="check-box-inner"><input type="checkbox"></div>
+                    <div>
+                        <p style="width: 100%;">
+                            Yes, Gift Aid it</p>
+                    </div>
+                </div>
+                <h3 style="font-weight: 400;">Would you like a printed receipt?</h3>
+                <div class="check-box3">
+                    <div class="check-box-inner"><input type="checkbox"></div>
+                    <div>
+                        <p style="width: 100%;">
+                            Yes</p>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="pay">PAY BY DEBIT / CREDIT CARD</button>
+                </div>
+                <div class="info-img-bar">
+                    <button class="check">
+                        <img src="img/p.svg" alt="" class="info-img-bar1">
+                        <img src="img/paypal.svg" alt=""  class="info-img-bar2">
+                        <span class="span2">Checkout</span></button>
+                </div>
+                <span class="span3">The safer, easier way to pay</span>
+                <h2>GIFT AID CONDITIONS</h2>
+                <article>I confirm that I am a UK Income or Capital Gains Tax payer and want Al Mustafa Welfare Trust
+                    (AMWT) to reclaim the tax as Gift Aid on this donation, any previous donations for the last 4 years
+                    and any future donations until I notify otherwise.</article>
+                <article>I understand that Gift Aid is reclaimed by the charity from the tax I pay for the current year
+                    and that if I pay less Income Tax and / or Capital Gains Tax than the amount of Gift Aid claimed on
+                    all my donations in that tax year it is my responsibility to pay any difference.</article>
+                <article>
+                    I understand that other taxes such as VAT and Council Tax do not qualify.
+                </article>
+                <article>I understand that the reclaimed tax will be used towards the administration cost of the charity
+                    and that I must inform the charity if I want to cancel the declaration, change my name or address or
+                    no longer pay sufficient tax.</article>
+            </div>
+        </div>
     </div>
 
 
