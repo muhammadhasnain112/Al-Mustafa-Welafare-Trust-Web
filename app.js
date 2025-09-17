@@ -11,6 +11,23 @@ const icon = document.getElementById('search-icon')
 const inputOuter = document.getElementById('inputOuter')
 const inputOuter1 = document.getElementById('inputOuter1')
 const search2 = document.getElementById('search2')
+const secimg = document.getElementById('secimg')
+const main = document.getElementById('main')
+
+
+document.addEventListener('scroll', () => {
+    console.log(window.scrollY);
+
+    if (window.scrollY >= 768) {
+        secimg.style.zIndex = 0
+    }
+
+    if (window.scrollY >= 1110) {
+        main.style.position = 'sticky'
+    } else {
+        main.style.position = 'static'
+    }
+})
 input.addEventListener('click', () => {
     input2.style.display = 'none'
     input.style.width = '100%'
@@ -74,7 +91,7 @@ appeal.addEventListener('mouseout', () => {
 })
 appeal2.addEventListener('mouseover', () => {
     infobar.style.opacity = 1
-    infobar.style.top = `${window.scrollY + 55}px`
+    infobar.style.top = `${window.scrollY + 40}px`
     infobar.style.visibility = 'visible'
     infobar.style.transform = 'translateY(0)'
 })
@@ -95,7 +112,7 @@ envolved.addEventListener('mouseout', () => {
     infobar3.style.opacity = 0
 })
 envolved2.addEventListener('mouseover', () => {
-    infobar3.style.top = `${window.scrollY + 55}px`
+    infobar3.style.top = `${window.scrollY + 40}px`
     infobar3.style.opacity = 1
     infobar3.style.visibility = 'visible'
     infobar3.style.transform = 'translateY(0)'
@@ -117,7 +134,7 @@ zakat.addEventListener('mouseout', () => {
     infobar2.style.opacity = 0
 })
 zakat2.addEventListener('mouseover', () => {
-    infobar2.style.top = `${window.scrollY + 55}px`
+    infobar2.style.top = `${window.scrollY + 40}px`
     infobar2.style.opacity = 1
     infobar2.style.visibility = 'visible'
     infobar2.style.transform = 'translateY(0)'
@@ -139,7 +156,7 @@ about.addEventListener('mouseout', () => {
     infobar4.style.opacity = 0
 })
 about2.addEventListener('mouseover', () => {
-    infobar4.style.top = `${window.scrollY + 55}px`
+    infobar4.style.top = `${window.scrollY + 40}px`
     infobar4.style.opacity = 1
     infobar4.style.visibility = 'visible'
     infobar4.style.transform = 'translateY(0)'

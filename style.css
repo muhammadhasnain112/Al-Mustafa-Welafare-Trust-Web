@@ -88,8 +88,8 @@ nav {
 }
 
 .appeals i {
-    margin-top: 5px;
-    margin-left: 3px;
+    margin-top: 0.5vw;
+    margin-left: 0.4vw;
 }
 
 #about {
@@ -105,6 +105,10 @@ nav {
 .navinner3 button:hover {
     background-color: #057e6c;
     cursor: pointer;
+}
+
+.navinner3 i {
+    font-size: 1.1vw;
 }
 
 .navinner2>div>div {
@@ -528,7 +532,14 @@ header>div img {
     border: none;
     color: var(--text-color);
     /* border-radius: 5px; */
+    font-family: Lato, sans-serif;
+    font-weight: 700;
     font-size: 0.8vw !important;
+}
+
+.secondnav button i {
+    color: #fff !important;
+    font-size: 1.1vw;
 }
 
 .img {
@@ -561,6 +572,11 @@ header>div img {
     font-size: 0.9vw !important;
 }
 
+.secondnav small:hover {
+    color: #009688;
+    cursor: pointer;
+}
+
 .secondnav>div {
     display: flex;
     align-items: center !important;
@@ -576,20 +592,17 @@ header>div img {
     display: flex;
     align-items: center !important;
     justify-content: center;
-    /* border: 1px solid red; */
-    /* height: 100%; */
-    /* font-size: 0.9vw !important; */
 }
 
-
-
-
-
+.secondnav h5:hover {
+    color: #009688;
+    cursor: pointer;
+}
 
 main {
-    height: 15vh;
+    height: 6vw;
     display: flex;
-    position: sticky;
+    /* position: sticky; */
     top: 3vw;
     background-color: #fff;
     z-index: 999;
@@ -636,22 +649,24 @@ main h4 {
 section {
     background-image: url(img/container-script-bg.png);
     background-repeat: no-repeat;
-    margin-top: 5vh;
-    height: 70vw;
+    margin-top: 3vw;
+    height: 55vw;
+    position: relative;
     background-color: var(--secondary-color);
 }
 
 
 .secimg {
     position: absolute;
-    top: 67vw;
-    z-index: 0000;
-    width: 50vw;
-    left: 30%;
+    top: -2vw;
+    z-index: 9999;
+    width: 30vw;
+    left: 36%;
 }
 
 .thirdimg {
-    margin-left: 47%;
+    width: 5vw;
+    margin-left: 48.5%;
     margin-top: 5vw;
 }
 
@@ -659,6 +674,8 @@ section h2 {
     margin-top: 2vw;
     font-family: oswald;
     opacity: 0.8;
+    text-transform: uppercase;
+    font-size: 2vw;
     text-align: center;
 }
 
@@ -673,7 +690,7 @@ section p {
 
 
 .cards-container {
-    margin-top: 7vw;
+    /* margin-top: 7vw; */
     width: 85%;
     height: 55%;
     margin-left: 7.5%;
@@ -683,7 +700,7 @@ section p {
 .cards {
     /* padding: 1vw 10vw; */
     display: flex;
-    margin-top: 10vw;
+    margin-top: 2vw;
     /* flex-wrap: wrap; */
     transition: transform 0.8s ease-in-out;
     gap: 1.5vw;
@@ -858,13 +875,12 @@ section p {
 }
 
 .infobar2 {
-    /* border:  1px solid red; */
-    opacity: 1;
-    /* z-index: 99999999999999999; */
+    opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
     transition: all 0.3s ease;
     height: 37vw;
+    z-index: 999999;
     position: absolute;
     width: 82vw;
     /* top: 8.5vw; */
@@ -1003,6 +1019,9 @@ section p {
 
 }
 
+.info2inner2 p {
+    font-size: 1vw;
+}
 
 .info2inner2 button {
     background-color: var(--primary-color);
@@ -1045,7 +1064,6 @@ section p {
     z-index: 999999;
     height: 37vw;
     position: absolute;
-    /* top: 8.5vw; */
     width: 82vw;
     margin-left: 8.4vw;
     background-color: var(--text-color);
@@ -1095,6 +1113,10 @@ section p {
 .lastinfo1 {
     padding: 1vw 2vw;
     border: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    /* justify-content: center; */
 }
 
 .lastinfo1 a {
@@ -1196,6 +1218,9 @@ section p {
     align-items: center;
 }
 
+.infobar img {
+    width: 3vw;
+}
 
 
 
@@ -1528,7 +1553,7 @@ aside h1 {
 .cards2 img {
 
     width: 3vw;
-    /* height: 2vw !important; */
+    height: 3vw !important;
 }
 
 .cards2 a {
@@ -2916,7 +2941,9 @@ footer a:hover {
     color: rgb(116, 116, 116);
     font-weight: 700;
 
-}.chotadiv4>p{
+}
+
+.chotadiv4>p {
     font-size: 1vw;
     word-spacing: 0.5vw;
     line-height: 1.4vw;
@@ -3526,9 +3553,11 @@ footer a:hover {
     top: 27%;
     position: absolute;
 }
-.giftaid{
+
+.giftaid {
     width: 10vw;
 }
+
 .span2 {
     position: absolute;
     color: #000;
