@@ -169,8 +169,9 @@ about2.addEventListener('mouseout', () => {
 
 
 
-// console.log(location.pathname);
-if (location.pathname == '/') {
+
+
+if(img){
 
     let count = 0
     setInterval(() => {
@@ -179,27 +180,33 @@ if (location.pathname == '/') {
             count = 0
         } img.src = `img/${count}.jpg`
     },
-        2000)
+    2000)
+}
+
     let index = 0;
     const cards = document.querySelector(".cards");
-    const totalCards = 8;
-    const visibleCards = 3;
+    if(cards){
 
-    function showCards() {
-        const cardWidth = document.querySelector(".card").offsetWidth + 20;
-        const offset = -(index * cardWidth * visibleCards);
-        cards.style.transform = `translateX(${offset}px)`;
-        index++;
-        if (index * visibleCards >= totalCards) {
-            index = 0;
+        const totalCards = 8;
+        const visibleCards = 3;
+        
+        function showCards() {
+            const cardWidth = document.querySelector(".card").offsetWidth + 20;
+            const offset = -(index * cardWidth * visibleCards);
+            cards.style.transform = `translateX(${offset}px)`;
+            index++;
+            if (index * visibleCards >= totalCards) {
+                index = 0;
+            }
         }
+        setInterval(showCards, 5000);
     }
-    setInterval(showCards, 5000);
-}
+
 
 
 
 if (location.pathname == "/zakat-calculator.html") {
+    console.log(location.pathname);
     const calcInput1 = document.getElementById('calc-input1')
     const calcInput2 = document.getElementById('calc-input2')
     const calcInput3 = document.getElementById('calc-input3')
@@ -784,6 +791,7 @@ if (location.pathname == "/zakat-calculator.html") {
 
 
 if (location.pathname == '/add-cart.html') {
+    console.log(location.pathname);
     let get_total = localStorage.getItem('total')
     const info_zakat_show = document.getElementById('info-zakat-show')
     info_zakat_show.innerText = get_total
