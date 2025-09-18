@@ -14,20 +14,20 @@ const search2 = document.getElementById('search2')
 const secimg = document.getElementById('secimg')
 const main = document.getElementById('main')
 
+if (main) {
+    document.addEventListener('scroll', () => {
+        if (window.scrollY >= 768) {
+            secimg.style.zIndex = 0
+        }
 
-document.addEventListener('scroll', () => {
-    console.log(window.scrollY);
+        if (window.scrollY >= 1110) {
+            main.style.position = 'sticky'
+        } else {
+            main.style.position = 'static'
+        }
+    })
+}
 
-    if (window.scrollY >= 768) {
-        secimg.style.zIndex = 0
-    }
-
-    if (window.scrollY >= 1110) {
-        main.style.position = 'sticky'
-    } else {
-        main.style.position = 'static'
-    }
-})
 input.addEventListener('click', () => {
     input2.style.display = 'none'
     input.style.width = '100%'
@@ -37,6 +37,7 @@ input.addEventListener('click', () => {
     inputOuter.style.visibility = 'visible'
     inputOuter.style.transform = 'translateY(0)'
 })
+
 let flag = false
 search2.addEventListener('click', () => {
     if (flag) {
@@ -171,7 +172,7 @@ about2.addEventListener('mouseout', () => {
 
 
 
-if(img){
+if (img) {
 
     let count = 0
     setInterval(() => {
@@ -180,45 +181,83 @@ if(img){
             count = 0
         } img.src = `img/${count}.jpg`
     },
-    2000)
+        2000)
 }
 
-    let index = 0;
-    const cards = document.querySelector(".cards");
-    if(cards){
-
-        const totalCards = 8;
-        const visibleCards = 3;
-        
-        function showCards() {
-            const cardWidth = document.querySelector(".card").offsetWidth + 20;
-            const offset = -(index * cardWidth * visibleCards);
-            cards.style.transform = `translateX(${offset}px)`;
-            index++;
-            if (index * visibleCards >= totalCards) {
-                index = 0;
-            }
+let index = 0;
+const cards = document.querySelector(".cards");
+const card_container = document.getElementById('card-container')
+if (card_container) {
+    const totalCards = 8;
+    const visibleCards = 3;
+    function showCards() {
+        const cardWidth = document.querySelector(".card").offsetWidth + 20;
+        const offset = -(index * cardWidth * visibleCards);
+        cards.style.transform = `translateX(${offset}px)`;
+        index++;
+        if (index * visibleCards >= totalCards) {
+            index = 0;
         }
-        setInterval(showCards, 5000);
     }
+    setInterval(showCards, 5000);
+}
 
 
 
 
-if (location.pathname == "/zakat-calculator.html") {
-    console.log(location.pathname);
-    const calcInput1 = document.getElementById('calc-input1')
-    const calcInput2 = document.getElementById('calc-input2')
-    const calcInput3 = document.getElementById('calc-input3')
-    const calcInput4 = document.getElementById('calc-input4')
-    const calcInput5 = document.getElementById('calc-input5')
-    const calcInput6 = document.getElementById('calc-input6')
-    const calcInput7 = document.getElementById('calc-input7')
-    const calcInput8 = document.getElementById('calc-input8')
-    const calcInput9 = document.getElementById('calc-input9')
-    const showcalc = document.getElementById('all-calc')
-    const zakatValue = document.getElementById('zakat-value')
-    const reset = document.getElementById('reset')
+
+// if (location.pathname == "/zakat-calculator.html") {
+// console.log(location.pathname);
+const calcInput1 = document.getElementById('calc-input1')
+const calcInput2 = document.getElementById('calc-input2')
+const calcInput3 = document.getElementById('calc-input3')
+const calcInput4 = document.getElementById('calc-input4')
+const calcInput5 = document.getElementById('calc-input5')
+const calcInput6 = document.getElementById('calc-input6')
+const calcInput7 = document.getElementById('calc-input7')
+const calcInput8 = document.getElementById('calc-input8')
+const calcInput9 = document.getElementById('calc-input9')
+const showcalc = document.getElementById('all-calc')
+const zakatValue = document.getElementById('zakat-value')
+const reset = document.getElementById('reset')
+const donateBox = document.getElementById('donate-bar')
+const zakat_pay = document.getElementById('zakat-pay')
+const Administration = document.getElementById('Administration')
+const olive_tree = document.getElementById('olive-tree')
+const Quran_reading = document.getElementById('Quran-reading')
+const all_zakat_show = document.getElementById('all-zakat-show')
+const total_2 = document.getElementById('total-2')
+const zakat_pay_value = document.getElementById('zakatvalue')
+const zakat_pay_value2 = document.getElementById('zakatvalue2')
+const zakat_pay_value3 = document.getElementById('zakatvalue3')
+const zakat_pay_value4 = document.getElementById('zakatvalue4')
+
+
+const donate = document.getElementById('donate')
+const already_calc_zakat_inp = document.getElementById('already-calc-zakat-inp')
+const already_calc_zakat_btn = document.getElementById('already-calc-zakat-btn')
+const plus = document.getElementById('plus')
+const counter = document.getElementById('counter')
+const check_box1 = document.getElementById('check-box1')
+const check_box2 = document.getElementById('check-box2')
+const check_box3 = document.getElementById('check-box3')
+const donate_now = document.getElementById('doante-now')
+const donate_now_value = document.getElementById('donate-now-value')
+const cancel = document.getElementById('cancel')
+if (donate_now) {
+    donate_now.addEventListener('click', () => {
+        donate2(donate_now_value.value)
+        // console.log();
+    })
+
+}
+
+
+
+
+
+
+if (reset) {
 
     reset.addEventListener('click', () => {
         showcalc.innerText = 'Rs:0.00'
@@ -414,20 +453,6 @@ if (location.pathname == "/zakat-calculator.html") {
         }
     })
 
-    const donate = document.getElementById('donate')
-    const donateBox = document.getElementById('donate-bar')
-    const zakat_pay = document.getElementById('zakat-pay')
-    const Administration = document.getElementById('Administration')
-    const olive_tree = document.getElementById('olive-tree')
-    const Quran_reading = document.getElementById('Quran-reading')
-    const all_zakat_show = document.getElementById('all-zakat-show')
-    const total_2 = document.getElementById('total-2')
-    const zakat_pay_value = document.getElementById('zakatvalue')
-    const zakat_pay_value2 = document.getElementById('zakatvalue2')
-    const zakat_pay_value3 = document.getElementById('zakatvalue3')
-    const zakat_pay_value4 = document.getElementById('zakatvalue4')
-    const already_calc_zakat_inp = document.getElementById('already-calc-zakat-inp')
-    const already_calc_zakat_btn = document.getElementById('already-calc-zakat-btn')
     already_calc_zakat_btn.addEventListener('click', () => {
         if (already_calc_zakat_inp.value == '') {
             toastr.info("Value is required and can't be empty")
@@ -437,7 +462,6 @@ if (location.pathname == "/zakat-calculator.html") {
         }
     })
 
-    const cancel = document.getElementById('cancel')
     donate.addEventListener('click', () => {
         if (zakatValue.innerText == 'RS:0.00') {
             toastr.info("Value is required and can't be empty")
@@ -446,44 +470,291 @@ if (location.pathname == "/zakat-calculator.html") {
             donate2(zakatValue.innerText)
         }
     })
-
-    function donate2(abc) {
-        all_zakat_show.innerText = abc
-        total_2.innerText = abc
-        donateBox.style.opacity = 1
-        donateBox.style.visibility = 'visible'
-        donateBox.style.transform = 'translatex(0)'
-        donateBox.style.right = 0
-        zakat_pay.style.display = 'flex'
-        zakat_pay_value.innerText = abc
-        const plus = document.getElementById('plus')
-        const counter = document.getElementById('counter')
+}
 
 
+function donate2(abc) {
 
-        const check_box1 = document.getElementById('check-box1')
-        const check_box2 = document.getElementById('check-box2')
-        const check_box3 = document.getElementById('check-box3')
+    all_zakat_show.innerText = abc
+    total_2.innerText = abc
+    donateBox.style.opacity = 1
+    donateBox.style.visibility = 'visible'
+    donateBox.style.transform = 'translatex(0)'
+    donateBox.style.right = 0
+    zakat_pay.style.display = 'flex'
+    zakat_pay_value.innerText = abc
 
-        let count = 1
+    let count = 1
 
-        plus.addEventListener('click', () => {
-            count++
-            counter.innerText = count
-            zakat_pay_value.innerText = `RS:${Number(abc.slice(3) * count)}`
+    plus.addEventListener('click', () => {
+        count++
+        counter.innerText = count
+        zakat_pay_value.innerText = `RS:${Number(abc.slice(3) * count)}`
+        if (check_box1.checked) {
+
+            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                + Number(zakat_pay_value2.innerText.slice(3))}`
+            if (check_box2.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))}`
+            } if (check_box3.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+            }
+        } else if (check_box2.checked) {
+            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                + Number(zakat_pay_value3.innerText.slice(3))}`
             if (check_box1.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))}`
+            }
+            if (check_box3.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+            }
+        } else if (check_box3.checked) {
+            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                + Number(zakat_pay_value4.innerText.slice(3))}`;
+            if (check_box1.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+            } if (check_box3.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+            }
+        } else {
+            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))}`
+        }
+    })
 
+    const minus = document.getElementById('minus')
+    minus.addEventListener('click', () => {
+        if (count <= 0) {
+            all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
+        } else {
+            count--
+            counter.innerText = count
+            zakat_pay_value.innerText = `RS:${Number(zakatValue.innerText.slice(3) * count)}`
+            all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
+        }
+    })
+    const plus2 = document.getElementById('plus2')
+    const counter2 = document.getElementById('counter2')
+    let count2 = 1
+    plus2.addEventListener('click', () => {
+        count2++
+        counter2.innerText = count2
+        zakat_pay_value2.innerText = `Rs:${10 * count2}`
+        all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+            + Number(zakat_pay_value2.innerText.slice(3))}`
+    })
+
+    const minus2 = document.getElementById('minus2')
+    minus2.addEventListener('click', () => {
+        if (count2 <= 0) {
+            all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
+        } else {
+            count2--
+            counter2.innerText = count2
+            zakat_pay_value2.innerText = `Rs:${zakat_pay_value2.innerText.slice(3) - 10}`
+            all_zakat_show.innerText = total_2.innerText = `RS:${all_zakat_show.innerText.slice(3) - 10}`
+        }
+    })
+
+    const plus3 = document.getElementById('plus3')
+    const counter3 = document.getElementById('counter3')
+    let count3 = 1
+    plus3.addEventListener('click', () => {
+        count3++
+        counter3.innerText = count3
+        zakat_pay_value3.innerText = `Rs:${25 * count3}`
+        all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+            + Number(zakat_pay_value2.innerText.slice(3)) + Number(zakat_pay_value3.innerText.slice(3))} `
+    })
+
+    const minus3 = document.getElementById('minus3')
+    minus3.addEventListener('click', () => {
+        if (count3 <= 0) {
+            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                + Number(zakat_pay_value2.innerText.slice(3))}`
+        } else {
+            count3--
+            counter3.innerText = count3
+            zakat_pay_value3.innerText = `Rs:${zakat_pay_value3.innerText.slice(3) - 25}`
+            all_zakat_show.innerText = total_2.innerText = `RS:${all_zakat_show.innerText.slice(3) - 25}`
+        }
+    })
+
+    const plus4 = document.getElementById('plus4')
+    const counter4 = document.getElementById('counter4')
+    let count4 = 1
+    plus4.addEventListener('click', () => {
+        count4++
+        counter4.innerText = count4
+        zakat_pay_value4.innerText = `RS:${1 * count4}`
+        all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+            + Number(zakat_pay_value2.innerText.slice(3))
+            + Number(zakat_pay_value3.innerText.slice(3))
+            + Number(zakat_pay_value4.innerText.slice(3))}`
+    })
+
+
+    const minus4 = document.getElementById('minus4')
+    minus4.addEventListener('click', () => {
+        if (count4 <= 0) {
+            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                + Number(zakat_pay_value2.innerText.slice(3))}`
+        } else {
+            count4--
+            counter4.innerText = count4
+            zakat_pay_value4.innerText = `RS:${zakat_pay_value4.innerText.slice(3) - 1}`
+            all_zakat_show.innerText = total_2.innerText = `RS:${all_zakat_show.innerText.slice(3) - 1}`
+        }
+    })
+
+
+    const add_another = document.getElementById('add-another')
+    const checkout = document.getElementById('checkout')
+    const donateBox2 = document.getElementById('donate-bar2')
+
+    add_another.addEventListener('click', () => {
+        donateBox.style.opacity = 0
+        donateBox.style.visibility = 'hidden'
+        donateBox.style.transform = 'translatex(15px)'
+        donateBox.style.right = 0
+        donateBox2.style.opacity = 0
+        donateBox2.style.visibility = 'hidden'
+        donateBox2.style.transform = 'translatex(15px)'
+        donateBox2.style.right = 0
+
+    })
+    checkout.addEventListener('click', () => {
+        donateBox2.style.opacity = 1
+        donateBox2.style.visibility = 'visible'
+        donateBox2.style.transform = 'translatex(0px)'
+        donateBox.style.right = '29.5%'
+    })
+    const check_box3_text = document.getElementById('check-box3-text')
+    const check_box2_text = document.getElementById('check-box2-text')
+    const check_box1_text = document.getElementById('check-box1-text')
+    check_box1.addEventListener('click', () => {
+        if (check_box1.checked) {
+            olive_tree.style.display = 'flex';
+            check_box1_text.style.color = '#009688'
+            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                + Number(zakat_pay_value2.innerText.slice(3))}`
+            if (check_box2.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))}`
+            } if (check_box3.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+            }
+        } else {
+            olive_tree.style.display = 'none';
+            check_box1_text.style.color = 'rgb(153, 153, 153)'
+            if (check_box2.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))}`
+                if (check_box3.checked) {
+                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                        + Number(zakat_pay_value3.innerText.slice(3))
+                        + Number(zakat_pay_value4.innerText.slice(3))}`
+                }
+            } else if (check_box3.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+                if (check_box2.checked) {
+                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                        + Number(zakat_pay_value3.innerText.slice(3))
+                        + Number(zakat_pay_value4.innerText.slice(3))}`
+                }
+            } else {
+                all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
+            }
+        }
+    })
+
+
+    check_box2.addEventListener('click', () => {
+        if (check_box2.checked) {
+            Quran_reading.style.display = 'flex';
+            check_box2_text.style.color = '#009688'
+            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                + Number(zakat_pay_value3.innerText.slice(3))}`
+            if (check_box1.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))}`
+            } if (check_box3.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+            }
+        } else {
+            Quran_reading.style.display = 'none';
+            check_box2_text.style.color = 'rgb(153, 153, 153)'
+            if (check_box1.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))}`
+                if (check_box3.checked) {
+                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                        + Number(zakat_pay_value2.innerText.slice(3))
+                        + Number(zakat_pay_value4.innerText.slice(3))}`
+                }
+            } else if (check_box3.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+                if (check_box1.checked) {
+                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                        + Number(zakat_pay_value2.innerText.slice(3))
+                        + Number(zakat_pay_value4.innerText.slice(3))}`
+                }
+            } else {
+                all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
+            }
+        }
+    })
+
+    check_box3.addEventListener('click', () => {
+        if (check_box3.checked) {
+            check_box3_text.style.color = '#009688'
+            Administration.style.display = 'flex';
+            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                + Number(zakat_pay_value4.innerText.slice(3))}`
+            if (check_box2.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+            } if (check_box1.checked) {
+                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
+                    + Number(zakat_pay_value2.innerText.slice(3))
+                    + Number(zakat_pay_value3.innerText.slice(3))
+                    + Number(zakat_pay_value4.innerText.slice(3))}`
+            }
+        } else {
+            check_box3_text.style.color = 'rgb(153, 153, 153)'
+            Administration.style.display = 'none';
+            if (check_box1.checked) {
                 all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
                     + Number(zakat_pay_value2.innerText.slice(3))}`
                 if (check_box2.checked) {
                     all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
                         + Number(zakat_pay_value2.innerText.slice(3))
                         + Number(zakat_pay_value3.innerText.slice(3))}`
-                } if (check_box3.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
                 }
             } else if (check_box2.checked) {
                 all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
@@ -493,301 +764,49 @@ if (location.pathname == "/zakat-calculator.html") {
                         + Number(zakat_pay_value2.innerText.slice(3))
                         + Number(zakat_pay_value3.innerText.slice(3))}`
                 }
-                if (check_box3.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
-                }
-            } else if (check_box3.checked) {
-                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                    + Number(zakat_pay_value4.innerText.slice(3))}`;
-                if (check_box1.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
-                } if (check_box3.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
-                }
             } else {
-                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))}`
-            }
-        })
-
-        const minus = document.getElementById('minus')
-        minus.addEventListener('click', () => {
-            if (count <= 0) {
-                all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
-            } else {
-                count--
-                counter.innerText = count
-                zakat_pay_value.innerText = `RS:${Number(zakatValue.innerText.slice(3) * count)}`
                 all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
             }
-        })
-        const plus2 = document.getElementById('plus2')
-        const counter2 = document.getElementById('counter2')
-        let count2 = 1
-        plus2.addEventListener('click', () => {
-            count2++
-            counter2.innerText = count2
-            zakat_pay_value2.innerText = `Rs:${10 * count2}`
-            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                + Number(zakat_pay_value2.innerText.slice(3))}`
-        })
+        }
+    })
 
-        const minus2 = document.getElementById('minus2')
-        minus2.addEventListener('click', () => {
-            if (count2 <= 0) {
-                all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
-            } else {
-                count2--
-                counter2.innerText = count2
-                zakat_pay_value2.innerText = `Rs:${zakat_pay_value2.innerText.slice(3) - 10}`
-                all_zakat_show.innerText = total_2.innerText = `RS:${all_zakat_show.innerText.slice(3) - 10}`
-            }
-        })
-
-        const plus3 = document.getElementById('plus3')
-        const counter3 = document.getElementById('counter3')
-        let count3 = 1
-        plus3.addEventListener('click', () => {
-            count3++
-            counter3.innerText = count3
-            zakat_pay_value3.innerText = `Rs:${25 * count3}`
-            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                + Number(zakat_pay_value2.innerText.slice(3)) + Number(zakat_pay_value3.innerText.slice(3))} `
-        })
-
-        const minus3 = document.getElementById('minus3')
-        minus3.addEventListener('click', () => {
-            if (count3 <= 0) {
-                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                    + Number(zakat_pay_value2.innerText.slice(3))}`
-            } else {
-                count3--
-                counter3.innerText = count3
-                zakat_pay_value3.innerText = `Rs:${zakat_pay_value3.innerText.slice(3) - 25}`
-                all_zakat_show.innerText = total_2.innerText = `RS:${all_zakat_show.innerText.slice(3) - 25}`
-            }
-        })
-
-        const plus4 = document.getElementById('plus4')
-        const counter4 = document.getElementById('counter4')
-        let count4 = 1
-        plus4.addEventListener('click', () => {
-            count4++
-            counter4.innerText = count4
-            zakat_pay_value4.innerText = `RS:${1 * count4}`
-            all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                + Number(zakat_pay_value2.innerText.slice(3))
-                + Number(zakat_pay_value3.innerText.slice(3))
-                + Number(zakat_pay_value4.innerText.slice(3))}`
-        })
-
-
-        const minus4 = document.getElementById('minus4')
-        minus4.addEventListener('click', () => {
-            if (count4 <= 0) {
-                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                    + Number(zakat_pay_value2.innerText.slice(3))}`
-            } else {
-                count4--
-                counter4.innerText = count4
-                zakat_pay_value4.innerText = `RS:${zakat_pay_value4.innerText.slice(3) - 1}`
-                all_zakat_show.innerText = total_2.innerText = `RS:${all_zakat_show.innerText.slice(3) - 1}`
-            }
-        })
-
-
-        const add_another = document.getElementById('add-another')
-        const checkout = document.getElementById('checkout')
-        const donateBox2 = document.getElementById('donate-bar2')
-
-        add_another.addEventListener('click', () => {
-            donateBox.style.opacity = 0
-            donateBox.style.visibility = 'hidden'
-            donateBox.style.transform = 'translatex(15px)'
-            donateBox.style.right = 0
-            donateBox2.style.opacity = 0
-            donateBox2.style.visibility = 'hidden'
-            donateBox2.style.transform = 'translatex(15px)'
-            donateBox2.style.right = 0
-
-        })
-        checkout.addEventListener('click', () => {
-            donateBox2.style.opacity = 1
-            donateBox2.style.visibility = 'visible'
-            donateBox2.style.transform = 'translatex(0px)'
-            donateBox.style.right = '29.5%'
-        })
-        const check_box3_text = document.getElementById('check-box3-text')
-        const check_box2_text = document.getElementById('check-box2-text')
-        const check_box1_text = document.getElementById('check-box1-text')
-        check_box1.addEventListener('click', () => {
-            if (check_box1.checked) {
-                olive_tree.style.display = 'flex';
-                check_box1_text.style.color = '#009688'
-                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                    + Number(zakat_pay_value2.innerText.slice(3))}`
-                if (check_box2.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))}`
-                } if (check_box3.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
-                }
-            } else {
-                olive_tree.style.display = 'none';
-                check_box1_text.style.color = 'rgb(153, 153, 153)'
-                if (check_box2.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))}`
-                    if (check_box3.checked) {
-                        all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                            + Number(zakat_pay_value3.innerText.slice(3))
-                            + Number(zakat_pay_value4.innerText.slice(3))}`
-                    }
-                } else if (check_box3.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
-                    if (check_box2.checked) {
-                        all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                            + Number(zakat_pay_value3.innerText.slice(3))
-                            + Number(zakat_pay_value4.innerText.slice(3))}`
-                    }
-                } else {
-                    all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
-                }
-            }
-        })
-
-
-        check_box2.addEventListener('click', () => {
-            if (check_box2.checked) {
-                Quran_reading.style.display = 'flex';
-                check_box2_text.style.color = '#009688'
-                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                    + Number(zakat_pay_value3.innerText.slice(3))}`
-                if (check_box1.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))}`
-                } if (check_box3.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
-                }
-            } else {
-                Quran_reading.style.display = 'none';
-                check_box2_text.style.color = 'rgb(153, 153, 153)'
-                if (check_box1.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))}`
-                    if (check_box3.checked) {
-                        all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                            + Number(zakat_pay_value2.innerText.slice(3))
-                            + Number(zakat_pay_value4.innerText.slice(3))}`
-                    }
-                } else if (check_box3.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
-                    if (check_box1.checked) {
-                        all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                            + Number(zakat_pay_value2.innerText.slice(3))
-                            + Number(zakat_pay_value4.innerText.slice(3))}`
-                    }
-                } else {
-                    all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
-                }
-            }
-        })
-
-        check_box3.addEventListener('click', () => {
-            if (check_box3.checked) {
-                check_box3_text.style.color = '#009688'
-                Administration.style.display = 'flex';
-                all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                    + Number(zakat_pay_value4.innerText.slice(3))}`
-                if (check_box2.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
-                } if (check_box1.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))
-                        + Number(zakat_pay_value4.innerText.slice(3))}`
-                }
-            } else {
-                check_box3_text.style.color = 'rgb(153, 153, 153)'
-                Administration.style.display = 'none';
-                if (check_box1.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value2.innerText.slice(3))}`
-                    if (check_box2.checked) {
-                        all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                            + Number(zakat_pay_value2.innerText.slice(3))
-                            + Number(zakat_pay_value3.innerText.slice(3))}`
-                    }
-                } else if (check_box2.checked) {
-                    all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                        + Number(zakat_pay_value3.innerText.slice(3))}`
-                    if (check_box1.checked) {
-                        all_zakat_show.innerText = total_2.innerText = `RS:${Number(zakat_pay_value.innerText.slice(3))
-                            + Number(zakat_pay_value2.innerText.slice(3))
-                            + Number(zakat_pay_value3.innerText.slice(3))}`
-                    }
-                } else {
-                    all_zakat_show.innerText = total_2.innerText = zakat_pay_value.innerText
-                }
-            }
-        })
-
-        cancel.addEventListener('click', () => {
-            donateBox.style.opacity = 0
-            donateBox.style.visibility = 'hidden'
-            donateBox.style.transform = 'translatex(15px)'
-            donateBox2.style.opacity = 0
-            donateBox2.style.visibility = 'hidden'
-            donateBox2.style.transform = 'translatex(15px)'
-        })
-
-    }
-
-    function add_cart() {
-
-        localStorage.setItem('total', all_zakat_show.innerText)
-        window.location.href = `add-cart.html`;
-
-    }
-    function remove() {
-        all_zakat_show.innerText = total_2.innerText = `RS:${Number(all_zakat_show.innerText.slice(3) - zakat_pay_value.innerText.slice(3))}`
-        zakat_pay.style.display = 'none'
-    }
-    function remove1() {
-        all_zakat_show.innerText = total_2.innerText = `RS:${Number(all_zakat_show.innerText.slice(3) - zakat_pay_value2.innerText.slice(3))}`
-        olive_tree.style.display = 'none'
-    }
-    function remove2() {
-        all_zakat_show.innerText = total_2.innerText = `RS:${Number(all_zakat_show.innerText.slice(3) - zakat_pay_value3.innerText.slice(3))}`
-        Quran_reading.style.display = 'none'
-    }
-    function remove3() {
-        all_zakat_show.innerText = total_2.innerText = `RS:${Number(all_zakat_show.innerText.slice(3) - zakat_pay_value4.innerText.slice(3))}`
-        Administration.style.display = 'none'
-    }
-
-
+    cancel.addEventListener('click', () => {
+        donateBox.style.opacity = 0
+        donateBox.style.visibility = 'hidden'
+        donateBox.style.transform = 'translatex(15px)'
+        donateBox2.style.opacity = 0
+        donateBox2.style.visibility = 'hidden'
+        donateBox2.style.transform = 'translatex(15px)'
+    })
 
 }
+
+function add_cart() {
+
+    localStorage.setItem('total', all_zakat_show.innerText)
+    window.location.href = `add-cart.html`;
+
+}
+function remove() {
+    all_zakat_show.innerText = total_2.innerText = `RS:${Number(all_zakat_show.innerText.slice(3) - zakat_pay_value.innerText.slice(3))}`
+    zakat_pay.style.display = 'none'
+}
+function remove1() {
+    all_zakat_show.innerText = total_2.innerText = `RS:${Number(all_zakat_show.innerText.slice(3) - zakat_pay_value2.innerText.slice(3))}`
+    olive_tree.style.display = 'none'
+}
+function remove2() {
+    all_zakat_show.innerText = total_2.innerText = `RS:${Number(all_zakat_show.innerText.slice(3) - zakat_pay_value3.innerText.slice(3))}`
+    Quran_reading.style.display = 'none'
+}
+function remove3() {
+    all_zakat_show.innerText = total_2.innerText = `RS:${Number(all_zakat_show.innerText.slice(3) - zakat_pay_value4.innerText.slice(3))}`
+    Administration.style.display = 'none'
+}
+
+
+
+
 
 
 if (location.pathname == '/add-cart.html') {

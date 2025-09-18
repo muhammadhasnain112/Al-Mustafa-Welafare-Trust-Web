@@ -29,6 +29,145 @@
 </head>
 
 <body>
+    <div id="donate-bar2">
+        <h3>Checkout</h3>
+        <h4>Help us further</h4>
+        <div style="margin-top: 2vw;">
+            <div>
+                <div>
+                    <h6>Plant an Olive Tree in <br>Palestine</h6>
+                    <h3 id="check-box1-text"><input type="checkbox" id="check-box1"> Olive Tree</h3>
+                </div>
+                <div>
+                    <h3 style="color: black;">Rs: 10.00</h3>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div>
+                    <h6>Eye Project</h6>
+                    <h3 id="check-box2-text"><input type="checkbox" id="check-box2">Qur'an Reading Pen</h3>
+                </div>
+                <div>
+                    <h3 style="color: black;">Rs: 25.00</h3>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div>
+                    <h6>Administration</h6>
+                    <h3 id="check-box3-text"><input type="checkbox" id="check-box3"> Administration Fee</h3>
+                </div>
+                <div>
+                    <h3 style="color: black;">Rs: 1.00</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="total">
+            <div>
+                <h3>Total</h3>
+                <h3 id="total-2">Rs:0.00</h3>
+            </div>
+            <div><button onclick="add_cart()">Complete Donation <i class="ri-arrow-right-s-line"></i></button></div>
+        </div>
+
+    </div>
+
+    <div class="donate-bar" id="donate-bar">
+        <div id="cancel"><i class="ri-close-fill"></i></div>
+        <h3><i class="ri-check-fill"></i> Donation Added</h3>
+        <h4>You are donating to <span></span></h4>
+
+
+        <div id="zakat-calc">
+            <div id="zakat-pay">
+                <div>
+                    <h3>Zakat</h3>
+                    <p>Single Payment Zakat</p>
+                    <div>
+                        <div style="border-right: none !important;" id="minus"><i class="ri-subtract-line"></i></div>
+                        <div style="border-right: none !important;" id="counter">1</div>
+                        <div id="plus"><i class="ri-add-line"></i></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="zakatvalue"></h3>
+                    <p><a href="#" onclick="remove()">Remove</a></p>
+                </div>
+            </div>
+            <div id="olive-tree">
+                <div>
+                    <h3>OLIVE TREE</h3>
+                    <p>Single Payment Zakat</p>
+                    <div>
+                        <div style="border-right: none !important;" id="minus2"><i class="ri-subtract-line"></i></div>
+                        <div style="border-right: none !important;" id="counter2">1</div>
+                        <div id="plus2"><i class="ri-add-line"></i></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="zakatvalue2">Rs:10.00</h3>
+                    <p><a href="#" onclick="remove1()">Remove</a></p>
+                </div>
+            </div>
+            <div id="Quran-reading">
+                <div>
+                    <h3>Qur'an Reading Pen</h3>
+                    <p>Single Payment Zakat</p>
+                    <div>
+                        <div style="border-right: none !important;" id="minus3"><i class="ri-subtract-line"></i></div>
+                        <div style="border-right: none !important;" id="counter3">1</div>
+                        <div id="plus3"><i class="ri-add-line"></i></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="zakatvalue3">Rs:25.00</h3>
+                    <p><a href="#" onclick="remove2()">Remove</a></p>
+                </div>
+            </div>
+            <div id="Administration" style="border: none;">
+                <div>
+                    <h3>Administration Fee</h3>
+                    <p>Single Payment Zakat</p>
+                    <div>
+                        <div style="border-right: none !important;" id="minus4"><i class="ri-subtract-line"></i></div>
+                        <div style="border-right: none !important;" id="counter4">1</div>
+                        <div id="plus4"><i class="ri-add-line"></i></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="zakatvalue4">Rs:1.00</h3>
+                    <p><a href="#" onclick="remove3()">Remove</a></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="all-calc">
+            <div>
+                <h3>Donations</h3>
+                <h3 id="all-zakat-show"></h3>
+            </div>
+            <div>
+                <button style="background-color: rgb(199, 213, 24);" id="add-another">ADD ANOTHER <i
+                        class="ri-arrow-right-s-line"></i></button>
+                <button style="background-color:  rgb(0, 155, 131) ; color: #fff;" id="checkout">CHECKOUT <i
+                        class="ri-arrow-right-s-line"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+
     <header>
 
 
@@ -202,10 +341,10 @@
                     <h3 class="zakat"><i class="ri-hand-coin-fill"></i>
                         <h3 class="zakat"> Zakat Resources</h3>
                     </h3>
-                    <br><br>
+
                 </div>
                 <div>
-                    <br>
+
                     <p>Zakat FAQs <br>
                         Zakat Calculator</p>
                 </div>
@@ -443,10 +582,10 @@
             </select>
         </div>
         <div>
-            <select name="" id="">
-                <option value="">$40.00</option>
-                <option value="">$50.00</option>
-                <option value="">$100.00</option>
+            <select name="" id="donate-now-value">
+                <option value="RS:40.00">RS:40.00</option>
+                <option value="RS:50.00">RS:50.00</option>
+                <option value="Rs:100.00">Rs:100.00</option>
             </select>
         </div>
         <div>
@@ -457,7 +596,7 @@
             </select>
         </div>
         <div>
-            <button>DONATE NOW</button>
+            <button id="doante-now">DONATE NOW</button>
         </div>
     </main>
 
@@ -545,7 +684,7 @@
         </p>
 
 
-        <div class="cards-container">
+        <div class="cards-container" id="card-container">
             <div class="cards">
                 <!-- Card 1 -->
                 <div class="card card1">

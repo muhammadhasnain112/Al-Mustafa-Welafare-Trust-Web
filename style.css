@@ -738,7 +738,7 @@ section p {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 1vw;
     /* z-index: 99999; */
     text-align: center;
     color: white;
@@ -804,7 +804,7 @@ section p {
     font-size: 0.7vw;
     font-weight: 900;
     /* padding: 0vw 1vw; */
-    margin-bottom: 10px;
+    margin-bottom: 0.5vw;
     cursor: pointer;
 
 }
@@ -824,8 +824,7 @@ section p {
 .card-footer {
     background: white;
     text-align: center;
-    padding: 8px;
-
+    padding: 0.8vw;
     font-size: 0.8vw;
     font-weight: bold;
     color: #444;
@@ -926,6 +925,7 @@ section p {
 .zakatfacts {
     justify-content: start !important;
     /* align-items: center; */
+    gap: 1vw;
     margin-left: 3%;
 }
 
@@ -3625,10 +3625,6 @@ article {
         height: 110vw;
     }
 
-    .secimg {
-        top: 74vw;
-    }
-
     section p {
         font-size: 1.3vw;
     }
@@ -3674,7 +3670,7 @@ article {
     }
 
     section {
-        height: 150vw;
+        height: 70vw;
     }
 
     #icons {
@@ -3682,16 +3678,14 @@ article {
         height: 75vw;
     }
 
-    .secimg {
-        top: 68vw;
-    }
 
-    .thirdimg {
-        margin-left: 40%;
-    }
 
     .donate {
         top: 22%;
+    }
+
+    .appeals h3 {
+        font-size: 1.8vw;
     }
 
     main {
@@ -3715,5 +3709,9 @@ article {
 
     .calc-card {
         height: 70vw;
+    }
+
+    .beech {
+        border-bottom: none;
     }
 }
