@@ -1,0 +1,5 @@
+user agent: *
+
+Allow: /
+
+sitemap: https://al-mustafa-welfare.netlify.app/sitemap.xml
